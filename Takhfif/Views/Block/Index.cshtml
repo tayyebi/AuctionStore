@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "مجوز دسترسی";
+}
+
+<p>
+    <a data-ajax="true" data-ajax-complete="JsDynamic()" data-ajax-mode="replace" data-ajax-update="#Dynamic" href="~/Admin/Block/List">لیست افراد بدون دسترسی</a>
+</p>
+
+
+<form method="post" action="~/Admin/Block/Index">
+    <fieldset>
+        <legend>دسترسی کاربران</legend>
+
+        <div class="editor-label">
+            نام کاربری
+        </div>
+        <div class="editor-field">
+            <input type="text" name="Username" value="@ViewBag.Username" />
+        </div>
+
+        <div class="editor-label">
+            دسترسی
+            <div class="Message">
+                تغییر دادن این مجوز میتواند باعث ایجاد دسترسی یا غیر فعال کردن دسترسی یه کاربر به وب سایت شود.
+            </div>
+        </div>
+        <div class="editor-field">
+            <select name="IsBlocked">
+                <option value="True">
+                    غیر فعال کردن دسترسی
+                </option>
+                <option value="False">
+                    فعال کردن دسترسی
+                </option>
+            </select>
+        </div>
+
+        <p>
+            <input type="submit" value="تغییر مجوز" />
+        </p>
+    </fieldset>
+</form>

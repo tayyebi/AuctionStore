@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+@section header{
+    <link rel="stylesheet" type="text/css" href="~/Content/_Application/Admin.css" />   
+    <script type="text/javascript" src="~/Scripts/_Application/Admin.js"></script>
+    مدیریت @Takhfif.App_Code.About.Name
+    <img src="@Takhfif.App_Code.Abnt.ImageThumbnail(Session["Username"].ToString())" />
+}
+@section Scripts{
+    $('input[type="submit"]').button();
+    @RenderSection("scripts", required: false)
+}
+@RenderBody()
+

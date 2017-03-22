@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Takhfif.Models.City>
+
+@{
+    ViewBag.Title = "شهر محصولات";
+}
+
+<p>
+    @Ajax.ActionLink("ایجاد", "Create", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Ajax.ActionLink("ویرایش", "Edit", new { id = item.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+            @Ajax.ActionLink("حذف", "Delete", new { id = item.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+        </td>
+    </tr>
+}
+</table>

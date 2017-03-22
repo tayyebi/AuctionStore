@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Takhfif.Models.Post>
+@{
+    ViewBag.Title = "آخرین ارسال های" + " " + ViewContext.RouteData.Values["Id"].ToString();
+}
+@foreach (var item in Model) {
+<item>    
+    <Headline>
+        @Html.DisplayFor(modelItem => item.Title)
+    </Headline>
+    <Abstract>
+        @Html.DisplayFor(modelItem => item.Abstract)
+    </Abstract>
+    <Date>
+        @Html.DisplayFor(modelItem => item.Date)
+    </Date>
+    <URL>
+       @Takhfif.App_Code.About.Root.ToString()Weblog/@Html.DisplayFor(modelItem => item.AdminUsername)/Post/@Html.DisplayFor(modelItem => item.Id)
+    </URL>
+</item>
+}

@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Takhfif.Models.Admin>
+@{
+    ViewBag.Title = "لیست مدیران";
+}
+@foreach (var item in Model) {
+<item>
+    <Username>
+        @Html.DisplayFor(modelItem => item.Username)
+    </Username>
+    <Url>
+        @Takhfif.App_Code.About.Root.ToString()Weblog/@Html.DisplayFor(modelItem => item.Username)
+    </Url>
+    <ImageUrl>
+        @Takhfif.App_Code.Abnt.ImageThumbnail(item.Username) 
+    </ImageUrl>
+    <Type>
+        @Html.DisplayFor(modelItem => item.Type)
+    </Type>
+    <About>
+        @Html.DisplayFor(modelItem => item.About)
+    </About>
+    <Connect>
+        @Html.Raw(item.HTML)
+    </Connect>
+</item>
+}

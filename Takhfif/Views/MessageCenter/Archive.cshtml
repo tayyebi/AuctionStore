@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Takhfif.Models.InMail>
+
+@{
+    ViewBag.Title = "آرشیو پیام";
+}
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FromUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromUsername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a data-ajax="true" data-ajax-complete="JsDynamic()" data-ajax-mode="replace" data-ajax-update="#Dynamic" href="/Admin/MessageCenter/Read/@item.Id">بخوان</a>
+            </td>
+        </tr>
+    }
+</table>

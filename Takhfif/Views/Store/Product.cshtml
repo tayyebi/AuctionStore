@@ -1,0 +1,60 @@
+﻿@model Takhfif.Models.Product
+@section Meta{
+<meta name="description" content="@System.Text.RegularExpressions.Regex.Replace(Model.Description, @"<[^>]*>", "")" />
+<meta name="keywords" content="@Model.City.Name - @Model.Group.Name - @Model.Name" />
+}
+@{
+    ViewBag.Title = Model.Name;
+}
+<h1 class="Product_Name">
+    @Model.Name
+</h1>
+<h2 class="Product_City">
+    @Model.City.Name
+</h2>
+<h2 class="Product_Group">
+    @Model.Group.Name
+</h2>
+<img class="Thumbnail" src="@Takhfif.App_Code.About.Root.ToString()Card/Thumbnail/@Model.Id" />
+<div class="Product_Description">
+    @Html.Raw(Model.Description)
+</div>
+<h3 class="Product_Buy">
+    <a id="Buy" title="افزودن به سبد" href="@Takhfif.App_Code.About.Root.ToString()Store/Buy/@Model.Id">
+        @Model.Count_Buy
+    </a>
+</h3>
+<h3 class="Product_Like">
+    <a id="Like" href="@Takhfif.App_Code.About.Root.ToString()Store/Like/@Model.Id">
+        @Model.Count_Like
+    </a>
+</h3>
+<span class="Product_Price_Original">
+    @Model.Price_Original
+</span>
+<span class="Product_Price_Off_Percent">
+    @Model.Price_Off_Percent
+</span>
+<span class="Product_Price_Off">
+    @Model.Price_Off
+</span>
+<div class="Product_Timer">
+    @Html.Action("Clock", "Component", new { id = Model.Date_Expire.Replace(":", String.Empty).Replace("/", String.Empty).Replace(" ", String.Empty).Replace("-", String.Empty), stable = "true" })
+</div>
+<div class="Product_Map">
+    @Model.Map
+</div>
+<div class="Slider">
+    @Html.Action("Slider", "Store", new { id = Model.Id })
+</div>
+<div class="Comment">
+    @Html.Action("Comment", "Card", new { id = Model.Id })
+</div>
+@section Scripts{
+$("#Like").click(function() {
+
+});
+$("#Buy").click(function() {
+
+});
+}

@@ -1,0 +1,23 @@
+﻿@model Takhfif.Models.Admin
+
+@{
+    ViewBag.Title = Model.Username;
+}
+
+<item>
+    <Username>
+        @Html.DisplayFor(model => model.Username)
+    </Username>
+    <Type>
+        @Html.DisplayFor(model => model.Type)
+    </Type>
+    <About>
+        @Html.DisplayFor(model => model.About)
+    </About>
+    <Connect>
+        @Html.Raw(Model.HTML)
+    </Connect>
+    <URL>
+        @Takhfif.App_Code.About.Root.ToString()Weblog/@Html.DisplayFor(model => model.Username)
+    </URL>
+</item>

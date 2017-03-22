@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "جستجو برای " + HttpContext.Current.Request.RequestContext.RouteData.Values["Id"].ToString();
+}
+<a href="~/Store/Archive">لیست کامل محصولات</a>
+<div class="Results"></div>
+@section Scripts{
+    $(document).ready(function () {
+        $.get(Root + "/Feed_Products/Product_Search/@HttpContext.Current.Request.RequestContext.RouteData.Values["Id"].ToString()" , {}, function (xml) {
+            var output = '';
+            $('item',xml).each(function(i) {
+                var Name = $(this).find("name").text();
+                var url = $(this).find("cardurl").text();
+                
+                $.get(url, function (data) {
+                    $(".Results").append('<div class="Card">' + data + '</div>');
+                });
+            });
+        });
+    });
+}

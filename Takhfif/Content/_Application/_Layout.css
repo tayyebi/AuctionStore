@@ -1,0 +1,257 @@
+﻿@font-face {
+    font-family: font;
+    src: url('3.ttf');
+}
+
+* {
+    font-family: font;
+    cursor: url('cursor.png'),none;
+}
+
+a, input, textarea {
+    -webkit-transition: width 1s, height 1s, background 1s, color 1s, font 1s, box-shadow 2s, -webkit-transform 1s, opacity 2s, border 1s;
+    transition: width 1s, height 1s, background 1s, color 1s, font 1s, box-shadow 2s, transform 1s, opacity 2s, border 1s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    padding: .5em;
+    margin: .5em;
+    border-radius: .5em;
+}
+
+a {
+    text-decoration: none;
+    padding: .25em;
+    margin: .25em;
+    color: rgb(10, 0, 255);
+    -moz-border-radius: .4em;
+    -webkit-border-radius: .4em;
+    border-radius: .4em;
+}
+
+    a:hover, a:active, a:focus {
+        color: #ff0000;
+    }
+
+input[type="text"], input[type="password"], input[type="number"] {
+    color: #345903;
+    border: .05em solid #96a37b;
+    background-color: #79be1e;
+    -moz-border-radius: .4em;
+    -webkit-border-radius: .4em;
+    border-radius: .4em;
+    padding: .5em 1em;
+    background-image: url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(162,211,30,1) 0,rgba(162,211,30,0) 10em),-moz-linear-gradient(#82cc27, #74b317);
+    background-image: url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(162,211,30,1)), to(rgba(162,211,30,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#82cc27), to(#74b317));
+}
+
+input[type="number"] {
+    margin: 0;
+}
+
+    input[type="text"]:hover, input[type="password"]:hover, input[type="text"]:focus, input[type="password"]:focus, input[type="text"]:active, input[type="password"]:active, input[type="number"]:hover, input[type="number"]:active, input[type="number"]:focus {
+        background-color: #89d228;
+        background-image: url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(183,229,45,1) 0,rgba(183,229,45,0) 10em),-moz-linear-gradient(#90de31, #7fc01e);
+        background-image: url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(183,229,45,1)), to(rgba(183,229,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#90de31), to(#7fc01e));
+    }
+
+table a, button, input[type="submit"], input[type="button"], input[type="reset"] {
+    text-shadow: .05em .05em 0 rgba(255,255,255,0.4);
+    text-decoration: none;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    padding: .5em 1em;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-image: url('button_bg.png');
+    background-position: bottom left, top right, 0 0, 0 0;
+    background-clip: border-box;
+    -moz-border-radius: .4em;
+    -webkit-border-radius: .4em;
+    border-radius: .4em;
+    -moz-box-shadow: 0 0 .05em #fff inset;
+    -webkit-box-shadow: 0 0 .05em #fff inset;
+    box-shadow: 0 0 .05em #fff inset;
+    -webkit-transition: background-position 1s;
+    -moz-transition: background-position 1s;
+    transition: background-position 1s;
+    color: #693e0a;
+    border: .05em solid #bea280;
+    background-color: #e38d27;
+    background-image: url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(232,189,45,1) 0,rgba(232,189,45,0) 10em),-moz-linear-gradient(#f1982f, #d4821f);
+    background-image: url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(232,189,45,1)), to(rgba(232,189,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1982f), to(#d4821f));
+}
+
+    table a:hover, table a:focus, input[type="submit"]:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:focus, input[type="button"]:focus, input[type="reset"]:focus, button:hover, button:focus {
+        background-position: top left;
+        background-position: top left, bottom right, 0 0, 0 0;
+    }
+
+    table a:active, [type="submit"]:active, input[type="button"]:active, input[type="reset"]:active, button:active {
+        bottom: -.05em;
+        background-color: #ec9732;
+        background-image: url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(241,192,52,1) 0,rgba(241,192,52,0) 10em),-moz-linear-gradient(#f9a746, #e18f2b);
+        background-image: url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(241,192,52,1)), to(rgba(241,192,52,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9a746), to(#e18f2b));
+    }
+
+textarea {
+    border: .05em solid #96a37b;
+    background-color: #79be1e;
+    -moz-border-radius: .4em;
+    -webkit-border-radius: .4em;
+    border-radius: .4em;
+    padding: .5em 1em;
+    color: #525252;
+    border: 1px solid #a5a5a5;
+    background-color: #a9adb1;
+    background-image: url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(197,199,202,1) 0,rgba(197,199,202,0) 100px),-moz-linear-gradient(#c5c7ca, #92989c);
+    background-image: url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(197,199,202,1)), to(rgba(197,199,202,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5c7ca), to(#92989c));
+}
+
+    textarea:hover, textarea:active, textarea:focus {
+        background-color: #b6bbc0;
+        background-image: url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(202,205,208,1) 0,rgba(202,205,208,0) 100px),-moz-linear-gradient(#d1d3d6, #9fa5a9);
+        background-image: url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(202,205,208,1)), to(rgba(202,205,208,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#d1d3d6), to(#9fa5a9));
+    }
+
+input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 0 .5em 0 0;
+    background: url('checkbox-sprite.png') no-repeat 0 0;
+    vertical-align: bottom;
+    position: relative;
+    bottom: 2px;
+}
+
+input[type="checkbox"]:checked + label:before {
+    background-position: 0 -16px;
+}
+
+input[type="checkbox"]:disabled + label:before {
+    background-position: 0 -32px;
+}
+
+input[type="checkbox"]:checked:disabled + label:before {
+    background-position: 0 -48px;
+}
+
+input[type="checkbox"]:focus + label:before {
+    outline: 1px dotted black;
+}
+
+select {
+    width: 20em;
+}
+
+table {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+    table td {
+        vertical-align: middle;
+        text-align: right;
+        padding: 7px;
+    }
+
+    table tr td:first-of-type img {
+        display: block;
+        width: 10em;
+        height: 8em;
+    }
+
+.Content {
+    min-height: 50em;
+    display: block;
+}
+
+
+
+
+
+
+
+.Card {
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    border: .1em solid rgb(236, 239, 255);
+    border-radius: 1em;
+    width: 19em;
+    margin:.5em;
+    padding: 0;
+    font-size:.8em;
+}
+
+    .Card img.Thumbnail {
+        display: block;
+        width: 100%;
+        border-radius: 0em;
+        padding: 0;
+        margin: 1em auto 0 auto;
+        background-color: rgba(197,199,202,1);
+    }
+
+    .Card a.Name {
+        display: block;
+        border-radius: 0;
+        text-align: center;
+        color: rgb(10, 0, 255);
+        margin: 0em auto 0 auto;
+        padding: 0;
+        background-color: rgb(221, 220, 241);
+    }
+
+        .Card a.Name:hover, .Card a.Name:active, .Card a.Name:focus {
+            background-color: rgb(3, 2, 34);
+            color: rgb(208, 207, 232);
+        }
+
+    .Card a.Like, .Card a.Buy {
+        display: inline-block;
+        width: 40%;
+        border-radius: .4em;
+        color: rgb(10, 0, 255);
+        /*background-color:#fff;*/
+        margin: 0.5em;
+        border: .1em solid rgba(197,199,202,1);
+        border-width:0;
+        padding: .25em;
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+    }
+
+        .Card a.Like:hover, .Card a.Like:active, .Card a.Like:focus, .Card a.Buy:hover, .Card a.Buy:focus, .Card a.Like:active {
+            background-image: none;
+            background-color:rgb(10, 0, 255);
+            color:#fff;
+            text-align: center;
+        }
+
+    .Card a.Like {
+        text-align: left;
+        background-image: url('like.png');
+        background-position: right center;
+        margin-right: 1em;
+        margin-left: auto;
+    }
+
+    .Card a.Buy {
+        background-image: url('basket.png');
+        background-position: left center;
+        text-align: right;
+        margin-right: 2%;
+    }

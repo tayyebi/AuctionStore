@@ -1,0 +1,33 @@
+﻿.Main .Headline {
+    display:block;
+    font-weight:inherit;
+    font-size:x-large;
+    text-shadow:0 0 1em;
+    color:#0034ff;
+}
+.Main .Abstract {
+    padding:1em;
+    margin-right:3em;
+    font-size:smaller;
+    border-right-style:dotted;
+    border-right-width:.5em;
+    border-right-color:#0034ff;
+}
+.Main .Body {
+    background-color:rgba(255, 255, 255, 0.00);
+    display:block;
+    margin-top:2em;
+    margin-bottom:2em;
+    margin-right:-2em;
+    padding:1em;
+    height:35em;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.Main .Date, .Main .Username {
+    text-align: left;
+    color: rgba(255, 255, 255,1);
+}
+    .Main .Date:hover, .Main .Username:hover {
+        color: #0034ff;
+    }

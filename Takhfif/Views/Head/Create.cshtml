@@ -1,0 +1,60 @@
+﻿@model Takhfif.Models.Admin
+
+@{
+    ViewBag.Title = "ایجاد";
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>کارمند</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Type)
+        </div>
+        <div class="editor-field">
+            <select id="Type" name="Type">
+                <option value="Head">مدیر کاربران</option>
+                <option value="Police">پلیس</option>
+                <option value="Vendor">فروشنده</option>
+                <option value="Accountant">حسابدار</option>
+            </select>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.About)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.About)
+            @Html.ValidationMessageFor(model => model.About)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HTML)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HTML)
+            @Html.ValidationMessageFor(model => model.HTML)
+        </div>
+
+        <p>
+            <input type="submit" value="ارائه مجوز دسترسی" />
+        </p>
+    </fieldset>
+}
+@if (!Request.IsAjaxRequest())
+{
+<div>
+    @Html.ActionLink("بازگشت", "Index")
+</div>
+}

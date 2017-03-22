@@ -1,0 +1,53 @@
+﻿@model Takhfif.Models.User
+
+@{
+    ViewBag.Title = "پروفایل";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <legend>درباره من</legend>
+        من
+        <select>
+            <option value="male" selected="selected">آقای</option>
+            <option value="female">خانم</option>
+        </select>
+        @Html.ValidationMessageFor(model => model.Gender)
+        @Session["Fullname"]
+        هستم.
+        <br/>
+        در ماه
+        @Html.EditorFor(model => model.Birth_Month)
+        @Html.ValidationMessageFor(model => model.Birth_Month)
+        سال
+        @Html.EditorFor(model=>model.Birth_Year)
+        @Html.ValidationMessageFor(model => model.Birth_Year)
+        متولد شده
+        <br/> 
+        و
+        با در نظر گرفتن تمامی ویژگی های این اجتماع، به این وب سایت
+        @Html.EditorFor(model => Model.Rate)
+        @Html.ValidationMessageFor(model => model.Rate)
+        میدهم.
+        <br/>
+        <div class="Abnt">
+            اطلاعات ما از شما در آبنبات:
+            <br/>
+            <div class="Message">
+                لطفا هرگونه خطا در اطلاعات زیر را در آبنبات اصلاح نمائید.
+            </div>
+            <br/>
+            <label for="Address">آدرس</label>
+            <span id="Abnabat">@Session["Address"]</span>
+            <label for="Phone">تلفن همراه</label>
+            <span id="Phone">@Session["Phone"]</span>
+        </div>
+        <p>
+            <input type="submit" value="به روز رسانی اطلاعات"/>
+        </p>
+    </fieldset>
+}

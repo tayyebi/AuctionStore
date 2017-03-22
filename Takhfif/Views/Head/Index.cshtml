@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Takhfif.Models.Admin>
+
+@{
+    ViewBag.Title = "مدیریت کاربران";
+}
+
+<p>
+    @Html.ActionLink("ایجاد", "Create", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+    @Html.ActionLink("اطلاعات " +Takhfif.App_Code.About.Name , "Information", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+    @Html.ActionLink("گروه محصولات", "Index", "Product_Group")
+    @Html.ActionLink("شهر محصولات", "Index", "Product_City")
+</p>
+<table>
+    <tr>
+        <th>تصویر در آبنبات</th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@Takhfif.App_Code.Abnt.ImageThumbnail(item.Username)" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.ActionLink("ویرایش", "Edit", new { id = item.Username }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+            @Ajax.ActionLink("جزئیات", "Details", new { id = item.Username }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+            @Ajax.ActionLink("حذف", "Delete", new { id = item.Username }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+        </td>
+    </tr>
+}
+</table>

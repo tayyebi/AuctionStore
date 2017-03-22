@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Takhfif.Models.Transfer>
+
+@{
+    ViewBag.Title = "واریز های کارت به کارت";
+}
+<table>
+    <tr>
+        <th>
+            تاریخ
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Refer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BranchCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Value)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Year)/@Html.DisplayFor(modelItem => item.Date_Month)/@Html.DisplayFor(modelItem => item.Date_Day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Refer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BranchCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Value)
+            </td>
+            <td>
+                @Ajax.ActionLink("مشاهده", "Transfer", new { id = item.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+            </td>
+        </tr>
+    }
+
+</table>

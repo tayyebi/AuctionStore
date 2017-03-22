@@ -1,0 +1,127 @@
+﻿body {
+    background-image:url(3.jpg);
+}
+a {
+    background-color:rgb(0, 148, 255);
+    text-decoration:none;
+}
+    a:hover, a:active, a:focus {
+        color:#d0e7f7;
+    }
+body #Title{
+    background-color:#021421;
+    color:#d0e7f7;
+    text-align:center;
+    font-size:smaller;
+    display:none;
+}
+header{
+    background-color:rgba(0, 148, 255, 0.80);
+    text-align:center;
+    margin:5%;
+    padding:5%;
+    border-radius:5%;
+    box-shadow: 0 0 10em #042033;
+}
+    header a , header a:hover , header a:active , header a:focus{
+        transition: background-color .5s;
+        display: inline-block;
+        background-position: center center;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        text-decoration: none;
+        background-color: rgba(0, 148, 255, 0.30);
+        border-radius: .5em;
+        text-align: center;
+        margin-top: .2em;
+        width: 10em;
+        height: 10em;
+        color: none;
+    }
+        header a:hover, header a:active, header a:focus {
+            background-color: rgb(0, 148, 255);
+        }
+        header a.Rss {
+            background-image: url(RssBlue.png);
+        }
+        header a.Home{
+            background-image: url(HomeBlue.png);
+        }
+        header a.Home_Weblog {
+            background-image: url(HomeBlue_Weblog.png);
+        }
+        header a.Home_Admin {
+            background-image: url(HomeBlue_Admin.png);
+        }
+        header a.Abnt {
+            background-image: url(../../../../Logo/Abnt.png);
+            background-color: rgba(255, 250, 0, 0.30);
+        }
+            header a.Abnt:hover, header a.Abnt:active, header a.Abnt:focus {
+                background-color: rgb(255, 250, 0);
+            }
+.Image {
+    display:block;
+    margin:0 auto 0 auto;
+    text-align:center;
+    width:10%;
+    height:10%;
+    border-radius:100%;
+    margin-bottom:10%;
+    box-shadow: 0 0 5em #d0e7f7;
+}
+header .Date{
+    display:block;
+    background-color:rgba(1, 11, 18, 0.60);
+    color:#d0e7f7;
+}
+.About, .Html {
+    margin: 2% 5% 2% auto;
+    display: block;
+    width: 31%;
+    background-color: rgba(3, 48, 81, 0.90);
+    border-radius:5%;
+    color:#d0e7f7;
+    padding:2%;
+    overflow-y:auto;
+    height:10em;
+    overflow-x:hidden;
+}
+.Main{
+    margin:-40em auto 2% 5%;
+    width:37%;
+    height:50em;
+    overflow-y:auto;
+    overflow-x:hidden;
+    background-color:rgba(213, 227, 238, 0.9);
+    color:#021421;
+    padding:2%;
+    padding-right:5%;
+}
+footer {
+    background-color:#021421;
+    color:rgb(0, 148, 255);
+    height:2em;
+    margin:0;
+    padding:0;
+    padding-bottom:.5em;
+    padding-top:.5em;
+    text-align:center;
+    border-top-left-radius:1em;
+    border-top-right-radius:1em;
+    box-shadow:0 0 1em #d0e7f7;
+    /*display:block;
+    position:fixed;
+    width:100%;
+    bottom:0;*/
+}
+footer img {
+    height:1em;
+    padding:.25em;
+    margin:.25em;
+    border-radius:.25em;
+    display:inline-block;
+    position:absolute;
+    left:2em;
+    background-color:#d0e7f7;
+}

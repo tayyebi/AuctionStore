@@ -1,0 +1,17 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $.get(Root + "/Feed_Products/Cities", {}, function (xml) {
+            var output = '';
+            $('item', xml).each(function (i) {
+                var Name = $(this).find("Name").text();
+                var Id = $(this).find("Id").text();
+
+                var Link = Root + '/Store/City' + Id;
+                Link = Link.replace(/^\s+|\s+$|\s+(?=\s)/g, '').replace(' ', '/');
+
+                output += '<a href="' + Link + '">' + Name + '</a>';
+            });
+            $(".City").append(output);
+        });
+    });
+</script>

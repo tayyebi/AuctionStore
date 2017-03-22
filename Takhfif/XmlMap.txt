@@ -1,0 +1,16 @@
+﻿	-- Weblog
+
+Feed_Weblog/Admins     								 Admins List
+Feed_Weblog/LastPost_Police							 Police Last Post
+Feed_Weblog/LastPost_Employee				   		 All Admins Posts Instead Of Police Admins
+Feed_Weblog/Top										 Last Ten Posts From All Admins To Weblog
+Feed_Weblog/Top_Username/{Id}						 Last Ten Posts From Username (Id cannot be null)
+Feed_Weblog/Post/{Id}								 View Post Content
+
+	-- Products
+
+Feed_Products/Cities								 Cities List
+Feed_Products/City/{Id}								 City Products
+
+Feed_Products/Groups								 Groups List
+Feed_Products/Group/{Id}							 Group Products

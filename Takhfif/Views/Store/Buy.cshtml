@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "خرید";
+}
+<div class="Message">
+    محصول شما به سبد خرید اضافه شد.
+</div>
+<a href="~/My/Basket">مشاهده سبد خرید</a>
+<a href="~/Store/Product/@HttpContext.Current.Request.RequestContext.RouteData.Values["Id"].ToString()">بازگشت</a>

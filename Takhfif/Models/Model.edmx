@@ -1,0 +1,1207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Products" EntityType="Model.Store.Products" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Cities" EntityType="Model.Store.Cities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Groups" EntityType="Model.Store.Groups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Likes" EntityType="Model.Store.Likes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="Model.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Orders" EntityType="Model.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Images" EntityType="Model.Store.Images" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transactions" EntityType="Model.Store.Transactions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transfers" EntityType="Model.Store.Transfers" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="InMails" EntityType="Model.Store.InMails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Admins" EntityType="Model.Store.Admins" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Comments" EntityType="Model.Store.Comments" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Slides" EntityType="Model.Store.Slides" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Uploads" EntityType="Model.Store.Uploads" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Posts" EntityType="Model.Store.Posts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Finilizations" EntityType="Model.Store.Finilizations" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CityProduct" Association="Model.Store.CityProduct">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="GroupProduct" Association="Model.Store.GroupProduct">
+      <End Role="Group" EntitySet="Groups" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="ProductImage" Association="Model.Store.ProductImage">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Image" EntitySet="Images" />
+    </AssociationSet>
+    <AssociationSet Name="ProductLike" Association="Model.Store.ProductLike">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Like" EntitySet="Likes" />
+    </AssociationSet>
+    <AssociationSet Name="ProductOrder" Association="Model.Store.ProductOrder">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="ProductComment" Association="Model.Store.ProductComment">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="AdminProduct" Association="Model.Store.AdminProduct">
+      <End Role="Admin" EntitySet="Admins" />
+      <End Role="Product" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="UserLike" Association="Model.Store.UserLike">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Like" EntitySet="Likes" />
+    </AssociationSet>
+    <AssociationSet Name="UserOrder" Association="Model.Store.UserOrder">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="UserTransaction" Association="Model.Store.UserTransaction">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Transaction" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="UserTransfer" Association="Model.Store.UserTransfer">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Transfer" EntitySet="Transfers" />
+    </AssociationSet>
+    <AssociationSet Name="AdminSlide" Association="Model.Store.AdminSlide">
+      <End Role="Admin" EntitySet="Admins" />
+      <End Role="Slide" EntitySet="Slides" />
+    </AssociationSet>
+    <AssociationSet Name="AdminUpload" Association="Model.Store.AdminUpload">
+      <End Role="Admin" EntitySet="Admins" />
+      <End Role="Upload" EntitySet="Uploads" />
+    </AssociationSet>
+    <AssociationSet Name="AdminPost" Association="Model.Store.AdminPost">
+      <End Role="Admin" EntitySet="Admins" />
+      <End Role="Post" EntitySet="Posts" />
+    </AssociationSet>
+    <AssociationSet Name="AdminFinilization" Association="Model.Store.AdminFinilization">
+      <End Role="Admin" EntitySet="Admins" />
+      <End Role="Finilization" EntitySet="Finilizations" />
+    </AssociationSet>
+    <AssociationSet Name="ProductFinilization" Association="Model.Store.ProductFinilization">
+      <End Role="Product" EntitySet="Products" />
+      <End Role="Finilization" EntitySet="Finilizations" />
+    </AssociationSet>
+    <AssociationSet Name="UserFinilization" Association="Model.Store.UserFinilization">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Finilization" EntitySet="Finilizations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date_Create" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date_Expire" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price_Original" Type="int" Nullable="false" />
+    <Property Name="Price_Off" Type="int" Nullable="false" />
+    <Property Name="Price_Off_Percent" Type="int" Nullable="false" />
+    <Property Name="Thumbnail" Type="varbinary(max)" Nullable="false" />
+    <Property Name="Count_Like" Type="int" Nullable="false" />
+    <Property Name="Count_Buy" Type="int" Nullable="false" />
+    <Property Name="Priority" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CityId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="GroupId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Map" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdminUsername" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Likes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserUsername" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Gender" Type="bit" Nullable="true" />
+    <Property Name="Birth_Year" Type="int" Nullable="true" />
+    <Property Name="Birth_Month" Type="int" Nullable="true" />
+    <Property Name="Rate" Type="int" Nullable="true" />
+    <Property Name="Bank" Type="int" Nullable="true" />
+    <Property Name="IsBlocked" Type="bit" Nullable="true" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date_Buy" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date_Expire" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="int" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="UserUsername" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Images">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="Source" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Direction" Type="bit" Nullable="false" />
+    <Property Name="Value" Type="int" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserUsername" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transfers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="OrderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Refer" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BranchCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="int" Nullable="false" />
+    <Property Name="Date_Year" Type="int" Nullable="false" />
+    <Property Name="Date_Month" Type="int" Nullable="false" />
+    <Property Name="Date_Day" Type="int" Nullable="false" />
+    <Property Name="IsConfirmed" Type="bit" Nullable="true" />
+    <Property Name="UserUsername" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InMails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ToUsername" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FromUsername" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsRead" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="About" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HTML" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Value" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="UserUsername" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Slides">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Source" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NavigateUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdminUsername" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Uploads">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Lenght" Type="int" Nullable="false" />
+    <Property Name="Bytes" Type="varbinary(max)" Nullable="true" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdminUsername" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Posts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Abstract" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdminUsername" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Finilizations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AdminUsername" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="UserUsername" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="CityProduct">
+    <End Role="City" Type="Model.Store.Cities" Multiplicity="1" />
+    <End Role="Product" Type="Model.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="GroupProduct">
+    <End Role="Group" Type="Model.Store.Groups" Multiplicity="1" />
+    <End Role="Product" Type="Model.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Group">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="GroupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductImage">
+    <End Role="Product" Type="Model.Store.Products" Multiplicity="1" />
+    <End Role="Image" Type="Model.Store.Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Image">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductLike">
+    <End Role="Product" Type="Model.Store.Products" Multiplicity="1" />
+    <End Role="Like" Type="Model.Store.Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Like">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductOrder">
+    <End Role="Product" Type="Model.Store.Products" Multiplicity="1" />
+    <End Role="Order" Type="Model.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductComment">
+    <End Role="Product" Type="Model.Store.Products" Multiplicity="1" />
+    <End Role="Comment" Type="Model.Store.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdminProduct">
+    <End Role="Admin" Type="Model.Store.Admins" Multiplicity="1" />
+    <End Role="Product" Type="Model.Store.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="AdminUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserLike">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1" />
+    <End Role="Like" Type="Model.Store.Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Like">
+        <PropertyRef Name="UserUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserOrder">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1" />
+    <End Role="Order" Type="Model.Store.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserTransaction">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1" />
+    <End Role="Transaction" Type="Model.Store.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="UserUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserTransfer">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1" />
+    <End Role="Transfer" Type="Model.Store.Transfers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Transfer">
+        <PropertyRef Name="UserUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdminSlide">
+    <End Role="Admin" Type="Model.Store.Admins" Multiplicity="1" />
+    <End Role="Slide" Type="Model.Store.Slides" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Slide">
+        <PropertyRef Name="AdminUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdminUpload">
+    <End Role="Admin" Type="Model.Store.Admins" Multiplicity="1" />
+    <End Role="Upload" Type="Model.Store.Uploads" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Upload">
+        <PropertyRef Name="AdminUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdminPost">
+    <End Role="Admin" Type="Model.Store.Admins" Multiplicity="1" />
+    <End Role="Post" Type="Model.Store.Posts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Post">
+        <PropertyRef Name="AdminUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AdminFinilization">
+    <End Role="Admin" Type="Model.Store.Admins" Multiplicity="1" />
+    <End Role="Finilization" Type="Model.Store.Finilizations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Admin">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Finilization">
+        <PropertyRef Name="AdminUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ProductFinilization">
+    <End Role="Product" Type="Model.Store.Products" Multiplicity="1" />
+    <End Role="Finilization" Type="Model.Store.Finilizations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Finilization">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserFinilization">
+    <End Role="User" Type="Model.Store.Users" Multiplicity="1" />
+    <End Role="Finilization" Type="Model.Store.Finilizations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Username" />
+      </Principal>
+      <Dependent Role="Finilization">
+        <PropertyRef Name="UserUsername" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" >
+        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Products" EntityType="Model.Product" />
+          <EntitySet Name="Cities" EntityType="Model.City" />
+          <EntitySet Name="Groups" EntityType="Model.Group" />
+          <EntitySet Name="Likes" EntityType="Model.Like" />
+          <EntitySet Name="Users" EntityType="Model.User" />
+          <EntitySet Name="Orders" EntityType="Model.Order" />
+          <EntitySet Name="Images" EntityType="Model.Image" />
+          <EntitySet Name="Transactions" EntityType="Model.Transaction" />
+          <EntitySet Name="Transfers" EntityType="Model.Transfer" />
+          <EntitySet Name="InMails" EntityType="Model.InMail" />
+          <EntitySet Name="Admins" EntityType="Model.Admin" />
+          <EntitySet Name="Comments" EntityType="Model.Comment" />
+          <EntitySet Name="Slides" EntityType="Model.Slide" />
+          <EntitySet Name="Uploads" EntityType="Model.Upload" />
+          <AssociationSet Name="CityProduct" Association="Model.CityProduct">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="GroupProduct" Association="Model.GroupProduct">
+            <End Role="Group" EntitySet="Groups" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="ProductImage" Association="Model.ProductImage">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Image" EntitySet="Images" />
+          </AssociationSet>
+          <AssociationSet Name="ProductLike" Association="Model.ProductLike">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Like" EntitySet="Likes" />
+          </AssociationSet>
+          <AssociationSet Name="ProductOrder" Association="Model.ProductOrder">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="ProductComment" Association="Model.ProductComment">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="AdminProduct" Association="Model.AdminProduct">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="UserLike" Association="Model.UserLike">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Like" EntitySet="Likes" />
+          </AssociationSet>
+          <AssociationSet Name="UserOrder" Association="Model.UserOrder">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="UserTransaction" Association="Model.UserTransaction">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Transaction" EntitySet="Transactions" />
+          </AssociationSet>
+          <AssociationSet Name="UserTransfer" Association="Model.UserTransfer">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Transfer" EntitySet="Transfers" />
+          </AssociationSet>
+          <AssociationSet Name="AdminSlide" Association="Model.AdminSlide">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Slide" EntitySet="Slides" />
+          </AssociationSet>
+          <AssociationSet Name="AdminUpload" Association="Model.AdminUpload">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Upload" EntitySet="Uploads" />
+          </AssociationSet>
+          <EntitySet Name="Posts" EntityType="Model.Post" />
+          <AssociationSet Name="AdminPost" Association="Model.AdminPost">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Post" EntitySet="Posts" />
+          </AssociationSet>
+          <EntitySet Name="Finilizations" EntityType="Model.Finilization" />
+          <AssociationSet Name="AdminFinilization" Association="Model.AdminFinilization">
+            <End Role="Admin" EntitySet="Admins" />
+            <End Role="Finilization" EntitySet="Finilizations" />
+          </AssociationSet>
+          <AssociationSet Name="ProductFinilization" Association="Model.ProductFinilization">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="Finilization" EntitySet="Finilizations" />
+          </AssociationSet>
+          <AssociationSet Name="UserFinilization" Association="Model.UserFinilization">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Finilization" EntitySet="Finilizations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Date_Create" Nullable="false" />
+          <Property Type="String" Name="Date_Expire" Nullable="false" />
+          <Property Type="Int32" Name="Price_Original" Nullable="false" />
+          <Property Type="Int32" Name="Price_Off" Nullable="false" />
+          <Property Type="Int32" Name="Price_Off_Percent" Nullable="false" />
+          <Property Type="Binary" Name="Thumbnail" Nullable="false" />
+          <Property Type="Int32" Name="Count_Like" Nullable="false" />
+          <Property Type="Int32" Name="Count_Buy" Nullable="false" />
+          <Property Type="Int32" Name="Priority" Nullable="false" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="Guid" Name="CityId" Nullable="false" />
+          <Property Type="Guid" Name="GroupId" Nullable="false" />
+          <Property Name="Map" Type="String" Nullable="false" />
+          <Property Type="String" Name="AdminUsername" Nullable="false" />
+          <NavigationProperty Name="City" Relationship="Model.CityProduct" FromRole="Product" ToRole="City" />
+          <NavigationProperty Name="Group" Relationship="Model.GroupProduct" FromRole="Product" ToRole="Group" />
+          <NavigationProperty Name="Images" Relationship="Model.ProductImage" FromRole="Product" ToRole="Image" />
+          <NavigationProperty Name="Likes" Relationship="Model.ProductLike" FromRole="Product" ToRole="Like" />
+          <NavigationProperty Name="Orders" Relationship="Model.ProductOrder" FromRole="Product" ToRole="Order" />
+          <NavigationProperty Name="Comments" Relationship="Model.ProductComment" FromRole="Product" ToRole="Comment" />
+          <NavigationProperty Name="Admin" Relationship="Model.AdminProduct" FromRole="Product" ToRole="Admin" />
+          <NavigationProperty Name="Finilizations" Relationship="Model.ProductFinilization" FromRole="Product" ToRole="Finilization" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Model.CityProduct" FromRole="City" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Model.GroupProduct" FromRole="Group" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Like">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UserUsername" Nullable="false" />
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Model.ProductLike" FromRole="Like" ToRole="Product" />
+          <NavigationProperty Name="User" Relationship="Model.UserLike" FromRole="Like" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Type="String" Name="Username" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Boolean" Name="Gender" Nullable="true" />
+          <Property Type="Int32" Name="Birth_Year" Nullable="true" />
+          <Property Type="Int32" Name="Birth_Month" Nullable="true" />
+          <Property Type="Int32" Name="Rate" Nullable="true" />
+          <Property Name="Bank" Type="Int32" annotation:StoreGeneratedPattern="None" Nullable="true" />
+          <Property Type="Boolean" Name="IsBlocked" Nullable="true" />
+          <NavigationProperty Name="Likes" Relationship="Model.UserLike" FromRole="User" ToRole="Like" />
+          <NavigationProperty Name="Orders" Relationship="Model.UserOrder" FromRole="User" ToRole="Order" />
+          <NavigationProperty Name="Transactions" Relationship="Model.UserTransaction" FromRole="User" ToRole="Transaction" />
+          <NavigationProperty Name="Transfers" Relationship="Model.UserTransfer" FromRole="User" ToRole="Transfer" />
+          <NavigationProperty Name="Finilizations" Relationship="Model.UserFinilization" FromRole="User" ToRole="Finilization" />
+          <Property Name="Email" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Date_Buy" Nullable="false" />
+          <Property Type="String" Name="Date_Expire" Nullable="false" />
+          <Property Type="Int32" Name="Price" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" />
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="String" Name="UserUsername" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Model.ProductOrder" FromRole="Order" ToRole="Product" />
+          <NavigationProperty Name="User" Relationship="Model.UserOrder" FromRole="Order" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="String" Name="Source" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Model.ProductImage" FromRole="Image" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Boolean" Name="Direction" Nullable="false" />
+          <Property Type="Int32" Name="Value" Nullable="false" />
+          <Property Type="String" Name="Date" Nullable="false" />
+          <Property Type="String" Name="UserUsername" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Model.UserTransaction" FromRole="Transaction" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Transfer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Int32" Name="OrderId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Refer" Nullable="false" />
+          <Property Type="String" Name="BranchCode" Nullable="false" />
+          <Property Type="Int32" Name="Value" Nullable="false" />
+          <Property Type="Int32" Name="Date_Year" Nullable="false" />
+          <Property Type="Int32" Name="Date_Month" Nullable="false" />
+          <Property Type="Int32" Name="Date_Day" Nullable="false" />
+          <Property Type="Boolean" Name="IsConfirmed" Nullable="true" />
+          <Property Type="String" Name="UserUsername" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Model.UserTransfer" FromRole="Transfer" ToRole="User" />
+        </EntityType>
+        <EntityType Name="InMail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="ToUsername" Nullable="false" />
+          <Property Type="String" Name="FromUsername" Nullable="false" />
+          <Property Type="String" Name="Date" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" />
+          <Property Name="IsRead" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Admin">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Type="String" Name="Username" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Type" Nullable="false" />
+          <Property Type="String" Name="About" Nullable="false" />
+          <Property Type="String" Name="HTML" Nullable="false" />
+          <NavigationProperty Name="Products" Relationship="Model.AdminProduct" FromRole="Admin" ToRole="Product" />
+          <NavigationProperty Name="Slides" Relationship="Model.AdminSlide" FromRole="Admin" ToRole="Slide" />
+          <NavigationProperty Name="Uploads" Relationship="Model.AdminUpload" FromRole="Admin" ToRole="Upload" />
+          <NavigationProperty Name="Posts" Relationship="Model.AdminPost" FromRole="Admin" ToRole="Post" />
+          <NavigationProperty Name="Finilizations" Relationship="Model.AdminFinilization" FromRole="Admin" ToRole="Finilization" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Date" Nullable="false" />
+          <Property Type="String" Name="Value" Nullable="false" />
+          <Property Type="Int32" Name="ProductId" Nullable="false" />
+          <Property Type="String" Name="UserUsername" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="Model.ProductComment" FromRole="Comment" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Slide">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Source" Nullable="false" />
+          <Property Type="String" Name="NavigateUrl" Nullable="false" />
+          <Property Type="String" Name="Date" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="String" Name="AdminUsername" Nullable="false" />
+          <NavigationProperty Name="Admin" Relationship="Model.AdminSlide" FromRole="Slide" ToRole="Admin" />
+        </EntityType>
+        <EntityType Name="Upload">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Guid" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="None" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Name" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" />
+          <Property Type="Int32" Name="Lenght" Nullable="false" />
+          <Property Type="Binary" Name="Bytes" />
+          <Property Type="String" Name="Date" Nullable="false" />
+          <Property Type="String" Name="AdminUsername" Nullable="false" />
+          <NavigationProperty Name="Admin" Relationship="Model.AdminUpload" FromRole="Upload" ToRole="Admin" />
+        </EntityType>
+        <Association Name="CityProduct">
+          <End Type="Model.City" Role="City" Multiplicity="1" />
+          <End Type="Model.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="GroupProduct">
+          <End Type="Model.Group" Role="Group" Multiplicity="1" />
+          <End Type="Model.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Group">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductImage">
+          <End Type="Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="Model.Image" Role="Image" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Image">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductLike">
+          <End Type="Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="Model.Like" Role="Like" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Like">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductOrder">
+          <End Type="Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductComment">
+          <End Type="Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="Model.Comment" Role="Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AdminProduct">
+          <End Type="Model.Admin" Role="Admin" Multiplicity="1" />
+          <End Type="Model.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="AdminUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserLike">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.Like" Role="Like" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Like">
+              <PropertyRef Name="UserUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserOrder">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="UserUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserTransaction">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.Transaction" Role="Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Transaction">
+              <PropertyRef Name="UserUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserTransfer">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.Transfer" Role="Transfer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Transfer">
+              <PropertyRef Name="UserUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AdminSlide">
+          <End Type="Model.Admin" Role="Admin" Multiplicity="1" />
+          <End Type="Model.Slide" Role="Slide" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Slide">
+              <PropertyRef Name="AdminUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AdminUpload">
+          <End Type="Model.Admin" Role="Admin" Multiplicity="1" />
+          <End Type="Model.Upload" Role="Upload" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Upload">
+              <PropertyRef Name="AdminUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Abstract" Nullable="false" />
+          <Property Type="String" Name="Body" Nullable="false" />
+          <Property Type="String" Name="Date" Nullable="false" />
+          <NavigationProperty Name="Admin" Relationship="Model.AdminPost" FromRole="Post" ToRole="Admin" />
+          <Property Type="String" Name="AdminUsername" Nullable="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        </EntityType>
+        <Association Name="AdminPost">
+          <End Type="Model.Admin" Role="Admin" Multiplicity="1" />
+          <End Type="Model.Post" Role="Post" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Post">
+              <PropertyRef Name="AdminUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Finilization">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Admin" Relationship="Model.AdminFinilization" FromRole="Finilization" ToRole="Admin" />
+          <Property Name="Date" Type="String" Nullable="false" />
+          <Property Name="AdminUsername" Type="String" Nullable="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="Product" Relationship="Model.ProductFinilization" FromRole="Finilization" ToRole="Product" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <NavigationProperty Name="User" Relationship="Model.UserFinilization" FromRole="Finilization" ToRole="User" />
+          <Property Name="UserUsername" Type="String" Nullable="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+        </EntityType>
+        <Association Name="AdminFinilization">
+          <End Type="Model.Admin" Role="Admin" Multiplicity="1" />
+          <End Type="Model.Finilization" Role="Finilization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Admin">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Finilization">
+              <PropertyRef Name="AdminUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductFinilization">
+          <End Type="Model.Product" Role="Product" Multiplicity="1" />
+          <End Type="Model.Finilization" Role="Finilization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Finilization">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserFinilization">
+          <End Type="Model.User" Role="User" Multiplicity="1" />
+          <End Type="Model.Finilization" Role="Finilization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="Finilization">
+              <PropertyRef Name="UserUsername" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ModelContainer">
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Date_Create" ColumnName="Date_Create" />
+          <ScalarProperty Name="Date_Expire" ColumnName="Date_Expire" />
+          <ScalarProperty Name="Price_Original" ColumnName="Price_Original" />
+          <ScalarProperty Name="Price_Off" ColumnName="Price_Off" />
+          <ScalarProperty Name="Price_Off_Percent" ColumnName="Price_Off_Percent" />
+          <ScalarProperty Name="Thumbnail" ColumnName="Thumbnail" />
+          <ScalarProperty Name="Count_Like" ColumnName="Count_Like" />
+          <ScalarProperty Name="Count_Buy" ColumnName="Count_Buy" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+          <ScalarProperty Name="Map" ColumnName="Map" />
+          <ScalarProperty Name="AdminUsername" ColumnName="AdminUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.City)">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Groups">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Group)">
+        <MappingFragment StoreEntitySet="Groups">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Likes">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Like)">
+        <MappingFragment StoreEntitySet="Likes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserUsername" ColumnName="UserUsername" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birth_Year" ColumnName="Birth_Year" />
+          <ScalarProperty Name="Birth_Month" ColumnName="Birth_Month" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Bank" ColumnName="Bank" />
+          <ScalarProperty Name="IsBlocked" ColumnName="IsBlocked" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Order)">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date_Buy" ColumnName="Date_Buy" />
+          <ScalarProperty Name="Date_Expire" ColumnName="Date_Expire" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="UserUsername" ColumnName="UserUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Images">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Image)">
+        <MappingFragment StoreEntitySet="Images">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Transaction)">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UserUsername" ColumnName="UserUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transfers">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Transfer)">
+        <MappingFragment StoreEntitySet="Transfers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Refer" ColumnName="Refer" />
+          <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="Date_Year" ColumnName="Date_Year" />
+          <ScalarProperty Name="Date_Month" ColumnName="Date_Month" />
+          <ScalarProperty Name="Date_Day" ColumnName="Date_Day" />
+          <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+          <ScalarProperty Name="UserUsername" ColumnName="UserUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InMails">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.InMail)">
+        <MappingFragment StoreEntitySet="InMails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ToUsername" ColumnName="ToUsername" />
+          <ScalarProperty Name="FromUsername" ColumnName="FromUsername" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Admin)">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="About" ColumnName="About" />
+          <ScalarProperty Name="HTML" ColumnName="HTML" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Comment)">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="UserUsername" ColumnName="UserUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Slides">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Slide)">
+        <MappingFragment StoreEntitySet="Slides">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="NavigateUrl" ColumnName="NavigateUrl" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="AdminUsername" ColumnName="AdminUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uploads">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Upload)">
+        <MappingFragment StoreEntitySet="Uploads">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Lenght" ColumnName="Lenght" />
+          <ScalarProperty Name="Bytes" ColumnName="Bytes" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="AdminUsername" ColumnName="AdminUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Posts">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Post)">
+        <MappingFragment StoreEntitySet="Posts">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Abstract" ColumnName="Abstract" />
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="AdminUsername" ColumnName="AdminUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Finilizations">
+      <EntityTypeMapping TypeName="IsTypeOf(Model.Finilization)">
+        <MappingFragment StoreEntitySet="Finilizations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="AdminUsername" ColumnName="AdminUsername" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="UserUsername" ColumnName="UserUsername" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

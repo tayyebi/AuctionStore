@@ -1,0 +1,46 @@
+﻿@{
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+@section Meta{
+    @RenderSection("Meta", required: false)
+}
+@section Scripts{
+    @RenderSection("scripts", required: false)
+}
+@section header{
+    <img class="Logo" src="~/Logo/Larg.png" />
+    <div class="Abnt">
+        @Html.Action("Status","ABNT")
+    </div>
+    <div class="Social_Follow">
+        @Html.Action("Social_Follow","Home")
+    </div>
+    <div class="Search">
+        @Html.Action("Component","Search")
+    </div>
+    <div class="RssList">
+        @Html.Action("RssList","Home")
+    </div>
+}
+@section dynamic{
+}
+<div class="Group">
+    @Html.Action("Group","Home")
+</div>
+<div class="City">
+    @Html.Action("City","Home")
+</div>
+@RenderBody()
+@section footer{
+    تمامی حقوق برای @Takhfif.App_Code.About.Name محفوظ است © 1393
+    <br/>
+    <div class="Links">
+        <a href="~/Info/HowDoItWorks">چگونه کار میکند؟</a>
+        <a href="~/Info/AboutUs">درباره ما</a>
+        <a href="~/Info/ContactUs">ارتباط با ما</a>
+
+        <a href="~/Weblog" title="">وبلاگ تیم @Takhfif.App_Code.About.Name</a>
+    </div>
+    <br />
+    <img class="Logo" src="~/Logo/Small.png" />
+}

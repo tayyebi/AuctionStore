@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+@section Scripts{
+    @RenderSection("scripts", required: false)
+}
+@section header{
+    <link rel="stylesheet" type="text/css" href="~/Content/_Application/User.css" />
+    <div class="Menu">
+        <a href="~/My/Profile">پروفایل</a>
+        <a href="~/My/Basket">سبد خرید</a>
+        <a href="~/MessageCenter/Index">مرکز پیام</a>
+        <a href="~/My/Bank">بانک</a>
+        <a href="~/My/Offline">شارژ آفلاین حساب</a>
+        <a href="~/My/Online">شارژ آنلاین حساب</a>
+    </div>
+    <h1>@Takhfif.App_Code.About.Name من</h1>
+    <h2>@Session["Fullname"]</h2>
+    <img src="@Takhfif.App_Code.Abnt.ImageThumbnail(Session["Username"].ToString())" />
+}
+@RenderBody()
+@section footer{
+    تمامی حقوق برای @Takhfif.App_Code.About.Name محفوظ است © 1393
+    <br />
+    <div class="Links">
+        <a href="~/Info/HowDoItWorks">چگونه کار میکند؟</a>
+        <a href="~/Info/AboutUs">درباره ما</a>
+        <a href="~/Info/ContactUs">ارتباط با ما</a>
+        <a href="~/Weblog" title="">وبلاگ تیم @Takhfif.App_Code.About.Name</a>
+    </div>
+}

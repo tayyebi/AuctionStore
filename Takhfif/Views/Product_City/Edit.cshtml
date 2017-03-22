@@ -1,0 +1,34 @@
+﻿@model Takhfif.Models.City
+
+@{
+    ViewBag.Title = "ویرایش";
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@Html.DisplayFor(model => model.Name)</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <p>
+            <input type="submit" value="ذخیره" />
+        </p>
+    </fieldset>
+}
+@if (!Request.IsAjaxRequest())
+{
+<p>
+    @Html.ActionLink("بازگشت", "Index")
+</p>
+}

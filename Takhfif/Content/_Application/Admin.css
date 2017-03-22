@@ -1,0 +1,12 @@
+﻿header{
+    background-color:#b2b2b2;
+}
+header img{
+    width:5em;
+    max-height:5em;
+    display:block;
+    position:absolute;
+    left:2em;
+    background-color:#b2b2b2;
+    top:1em;
+}

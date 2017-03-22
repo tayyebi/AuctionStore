@@ -1,0 +1,33 @@
+﻿@model Takhfif.Models.Upload
+
+@{
+    ViewBag.Title = "لینک دانلود";
+}
+
+<fieldset>
+    <legend>آپلود</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.DownloadLink)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DownloadLink)
+    </div>
+
+</fieldset>
+<p>
+@if (!Request.IsAjaxRequest())
+{
+	<div>
+		@Html.ActionLink("بازگشت", "Index")
+	</div>
+}
+
+</p>

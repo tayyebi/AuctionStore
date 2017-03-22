@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = ViewBag.Order;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@ViewBag.Order</legend>
+        @Html.Hidden("OrderId", HttpContext.Current.Request.RequestContext.RouteData.Values["Id"].ToString())
+        <input type="submit" value="درخواست تائید" />
+    </fieldset>
+}

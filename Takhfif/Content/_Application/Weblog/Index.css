@@ -1,0 +1,72 @@
+﻿.List .Admin {
+    display: inline-block;
+    background-color: rgba(0, 148, 255, 0.90);
+    margin: 4em;
+    width: 24em;
+    padding: 5em;
+    text-align: center;
+    border-radius: 5em;
+    box-shadow: 0 0 50em rgb(208, 232, 250);
+    height: 20em;
+}
+    .List .Admin .Username, .List .Admin .Type, .List .Admin .Description {
+        display: block;
+        background-color: rgba(119, 193, 247, 0.90);
+        box-shadow: 0 0 1em rgb(4, 26, 42);
+        margin: .5em auto .5em auto;
+        border-radius: 1em;
+        padding: .5em;
+        text-decoration: none;
+        z-index: 20;
+    }
+    .List .Admin .Description {
+        height: 2.5em;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    .List .Admin a.Username:hover, .List .Admin a.Username:focus, .List .Admin a.Username:active {
+        background-color: rgb(4, 26, 42);
+        color: rgb(208, 232, 250);
+    }
+    .List .Admin img.Image {
+        display:block;
+        margin:0 auto 0 auto;
+        border-radius:10em;
+        width:10em;
+        height:10em;
+        box-shadow:none;
+        padding:.5em;
+        background-color:rgb(208, 232, 250);
+    }
+
+    /*-----------------------------------------------------------------------------------*/
+
+.Main .Post {
+    background-color:rgb(4, 26, 42);
+    color:rgba(119, 193, 247, 0.90);
+    padding:1em;
+    border-radius:1em;
+    margin-top:1em;
+}
+    .Main .Post .Headline {
+        text-decoration:none;
+        background:none;
+        background-color:rgba(119, 193, 247, 0.90);
+        display:block;
+        text-align:center;
+    }
+        .Main .Post .Headline:hover, .Main .Post .Headline:focus, .Main .Post .Headline:active {
+            background-color:rgb(4, 26, 42);
+            color:rgba(119, 193, 247, 0.90);
+            text-shadow: 0 0 1em rgb(208, 232, 250);
+            border-color:rgb(208, 232, 250);
+            border-width:.01em;
+            border-style:solid;
+        }
+    .Main .Post .Date {
+        border-color: rgb(208, 232, 250);
+        border-width: .01em;
+        border-style: dotted;
+        display:block;
+        text-align:left;
+    }

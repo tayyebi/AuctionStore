@@ -1,0 +1,32 @@
+﻿@model Takhfif.Models.InMail
+
+@{
+    ViewBag.Title = "پیام از: " + Model.FromUsername + " در " + Model.Date;
+}
+@if (ViewBag.Admin != null)
+{
+<div class="Message">
+    این پیام از طرف مدیر @Takhfif.App_Code.About.Name، @ViewBag.Admin، برای شما ارسال شده است.
+</div>
+}
+<fieldset>
+    <legend>از: @Html.DisplayFor(model => model.FromUsername)</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+    <hr />
+    <div class="display-field">
+        @Html.Raw(Model.Value)
+    </div>
+
+</fieldset>
+@if (!Request.IsAjaxRequest())
+{
+<p>
+   <a href="~/MessageCenter/Index">بازگشت</a>
+</p>
+}

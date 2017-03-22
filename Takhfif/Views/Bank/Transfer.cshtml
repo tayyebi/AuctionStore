@@ -1,0 +1,59 @@
+﻿@model Takhfif.Models.Transfer
+
+@{
+    ViewBag.Title = "جزئیات واریز کارت به کارت";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>واریز شماره @Html.DisplayFor(model => model.OrderId)</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Refer)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Refer)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.BranchCode)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.BranchCode)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Value)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Value)
+        </div>
+
+        <div class="display-label">
+            تاریخ
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Date_Year)/@Html.DisplayFor(model => model.Date_Month)/@Html.DisplayFor(model => model.Date_Day)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsConfirmed)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsConfirmed)
+            @Html.ValidationMessageFor(model => model.IsConfirmed)
+        </div>
+
+        <p>
+            <input type="submit" value="ذخیره" />
+            @if (!Request.IsAjaxRequest())
+            {
+                @Html.ActionLink("بازگشت", "Index")
+            }
+        </p>
+    </fieldset>
+}

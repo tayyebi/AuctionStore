@@ -1,0 +1,41 @@
+﻿@model Takhfif.Models.Product
+
+@{
+    ViewBag.Title = "حذف";
+}
+
+<fieldset>
+    <legend>@Html.DisplayFor(model => model.Name)</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Date_Expire)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date_Expire)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Price_Original)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price_Original)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Price_Off_Percent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price_Off_Percent)
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="حذف" />
+    </p>
+}
+@if (!Request.IsAjaxRequest())
+{
+    @Html.ActionLink("بازگشت", "Index")
+}

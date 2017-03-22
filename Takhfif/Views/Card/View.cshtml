@@ -1,0 +1,12 @@
+﻿@model Takhfif.Models.Product
+
+<img class="Thumbnail" src="@Takhfif.App_Code.About.Root.ToString()Card/Thumbnail/@Model.Id" />
+<a class="Name" href="@Takhfif.App_Code.About.Root.ToString()Store/Product/@Model.Id">
+    @Model.Name
+</a>
+<a class="Like" href="@Takhfif.App_Code.About.Root.ToString()Store/Like/@Model.Id">
+    @Model.Count_Like
+</a>
+<a class="Buy" href="@Takhfif.App_Code.About.Root.ToString()Store/Buy/@Model.Id">
+    @Model.Count_Buy
+</a>

@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "سیستم احراز هویت مرکزی - آبنبات";
+
+
+    int Step = 0;
+    string Username = null;
+    if (Session["Username"] != null && Session["Fullname"] != null && Session["Email"] != null)
+    {
+        Username = Session["Username"].ToString();
+        if (ViewContext.RouteData.Values["Username"].ToString() == "[anonymous]")
+        {
+            Response.Redirect(Takhfif.App_Code.About.Root + "Abnt/" + Username);
+        }
+        
+        if (Session["PostalCode"].ToString() != "" && Session["Address"].ToString() != "" && Session["Phone"].ToString() != "")
+        {
+            Step = 1;
+        }
+        else
+        {
+            Step = 2;
+        }
+    }
+    else
+    {
+        try
+        {   
+            Username = ViewContext.RouteData.Values["Username"].ToString();
+        }
+        catch
+        {
+            Username = "[anonymous]";
+        }
+    }
+    string LogoutLink = "<a href=\"" + Takhfif.App_Code.About.Root + "Abnt/" + Username + "/Logout" + "\">باطل کردن مجوز ورود به وب سایت هدف. کد:" + Takhfif.App_Code.Abnt.WebApp_Name + "</a>";
+    string Step1 = null;
+    string Step2 = null;
+    string Step3 = null;
+    try{
+        Step1 = "<a href=\"" + Takhfif.App_Code.About.Root + "Abnt/[anonymous]" + "\">ارسال درخواست دریافت اطلاعات</a>";
+        Step3 = "<a href=\"" + Takhfif.App_Code.Abnt.WebApp_Url + Username + "/fa-IR/User/Link" + "\">ویرایش اطلاعات هویتی</a><br/>" + LogoutLink;
+        Step2 = "<a href=\"../../\">خانه</a>" + "&#160;" + "&nbsp;" + LogoutLink + "<br/> دریافت اطلاعات ... موفقیت!<br/>دریافت اطلاعات به عنوان " + Username + "... موفقیت!<br />نام کاربر در سیستم آبنبات: " + Session["Fullname"] + "<br/>تصویر کاربر: <br/><img src=\"" + Takhfif.App_Code.Abnt.ImageThumbnail(Session["Username"].ToString()) + "\" />";
+    }
+    catch{}
+    string[] Steps = new string[3] { Step1, Step2, Step3 };
+    string Error = "دریافت اطلاعات... شکست!";
+}
+@if (ViewBag.Message == null)
+{
+    <div>
+        (@Username@@@HttpContext.Current.Request.Url.Host ~) 
+        @try{
+            @Html.Raw(Steps[Step])
+        }
+        catch{
+            @Error
+        }
+    </div>
+}
+else
+{
+    @ViewBag.Message
+}

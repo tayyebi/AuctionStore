@@ -1,0 +1,18 @@
+﻿@model Takhfif.Models.Post
+@{
+    ViewBag.Title = "آخرین پست پلیس";
+}
+<item>
+    <Username>
+        @Html.DisplayFor(model => model.AdminUsername)
+    </Username>
+    <Content>
+        @Html.DisplayFor(model => model.Abstract)
+    </Content>
+    <Date>
+        @Html.DisplayFor(model => model.Date)
+    </Date>
+    <URL>
+       @Takhfif.App_Code.About.Root.ToString()Weblog/@Html.DisplayFor(model => model.AdminUsername)/Post/@Html.DisplayFor(model => model.Id)
+    </URL>
+</item>

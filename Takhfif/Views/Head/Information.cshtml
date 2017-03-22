@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "اطلاعات سایت";
+}
+<form method="post">
+    <fieldset>
+        <legend>
+            <select id="Part" name="Part">
+                <option value="AboutUs">درباره ما</option>
+                <option value="ContactUs">ارتباط با ما</option>
+                <option value="HowDoItWorks">چگونه کار میکند؟</option>
+                <option value="OfflineBank">اطلاعات واریز کارت به کارت</option>
+            </select>
+        </legend>
+        <div class="editor-field">
+            <textarea id="Value" name="Value"></textarea>
+        </div>
+        <p>
+            <input type="submit" value="ویرایش" />
+        </p>
+    </fieldset>
+</form>
+@if (!Request.IsAjaxRequest())
+{
+<p>
+    @Html.ActionLink("بازگشت", "Index")
+</p>
+}

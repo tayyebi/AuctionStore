@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Takhfif.Models.City>
+@{
+    ViewBag.Title = "شهر ها";
+}
+
+@foreach (var item in Model) {
+<item>
+    <Name>
+        @Html.DisplayFor(modelItem => item.Name)
+    </Name>
+    <Id>
+        @Html.DisplayFor(modelItem => item.Id)
+    </Id>
+</item>
+}

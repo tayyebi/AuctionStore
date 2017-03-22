@@ -1,0 +1,21 @@
+﻿<div class="Admin_LastPost">
+    <span class="Admin_LastPost_Username"></span>
+    <span class="Admin_LastPost_Date"></span>
+    <div class="Admin_LastPost_Content"></div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.get(Root + "/Feed_Weblog/LastPost_Admin", {}, function (xml) {
+            $('item', xml).each(function (i) {
+                var Username = $(this).find("Username").text();
+                var Content = $(this).find("Content").text();
+                var Date = $(this).find("Date").text();
+                var Link = $(this).find("URL").text();
+
+                $(".Admin_LastPost_Username").append(Username);
+                $(".Admin_LastPost_Date").append(Date);
+                $(".Admin_LastPost_Content").append('<a href="' + Link + '">' + Content + '</a>');
+            });
+        });
+    });
+</script>

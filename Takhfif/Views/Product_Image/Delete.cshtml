@@ -1,0 +1,40 @@
+﻿@model Takhfif.Models.Image
+
+@{
+    ViewBag.Title = "حدف";
+}
+<fieldset>
+    <legend>تصویر</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Product.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Product.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Source)
+    </div>
+    <div class="display-field">
+        <img src="@Html.DisplayFor(model => model.Source)" />
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+</fieldset>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="حذف" />
+    </p>
+}
+@if (!Request.IsAjaxRequest())
+{
+    @Html.ActionLink("بازگشت", "Index")
+}

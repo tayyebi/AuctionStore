@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Takhfif.Models.Product>
+@{
+    ViewBag.Title = "محصولات";
+}
+
+@foreach (var item in Model)
+{
+<item>
+    <Name>
+        @Html.DisplayFor(modelItem => item.Name)
+    </Name>
+    <Id>
+        @Html.DisplayFor(modelItem => item.Id)
+    </Id>
+    <CardUrl>
+        @Takhfif.App_Code.About.Root.ToString()Card/View/@Html.DisplayFor(modelitem => item.Id)
+    </CardUrl>
+    <Url>
+        @Takhfif.App_Code.About.Root.ToString()Store/Product/@Html.DisplayFor(modelitem => item.Id)
+    </Url>
+</item>
+}

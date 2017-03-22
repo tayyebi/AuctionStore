@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1fe6cee1a2334b179a807ed8b1382680" Name="Diagram1" ZoomLevel="101" >
+        <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="3" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.City" Width="1.5" PointX="0.75" PointY="6.5" />
+        <EntityTypeShape EntityType="Model.Group" Width="1.5" PointX="0.75" PointY="12.875" />
+        <EntityTypeShape EntityType="Model.Like" Width="1.5" PointX="5.25" PointY="8.5" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="3" PointY="1.875" />
+        <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Image" Width="1.5" PointX="5.25" PointY="13" />
+        <EntityTypeShape EntityType="Model.Transaction" Width="1.5" PointX="5.25" PointY="1.375" />
+        <EntityTypeShape EntityType="Model.Transfer" Width="1.5" PointX="5.25" PointY="19.375" />
+        <EntityTypeShape EntityType="Model.InMail" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Admin" Width="1.5" PointX="7.625" PointY="8.875" />
+        <EntityTypeShape EntityType="Model.Comment" Width="1.5" PointX="5.25" PointY="15.875" />
+        <EntityTypeShape EntityType="Model.Slide" Width="1.5" PointX="3" PointY="13.875" />
+        <EntityTypeShape EntityType="Model.Upload" Width="1.5" PointX="1" PointY="16" />
+        <AssociationConnector Association="Model.CityProduct" />
+        <AssociationConnector Association="Model.GroupProduct" />
+        <AssociationConnector Association="Model.ProductImage" />
+        <AssociationConnector Association="Model.ProductLike" />
+        <AssociationConnector Association="Model.ProductOrder" />
+        <AssociationConnector Association="Model.ProductComment" />
+        <AssociationConnector Association="Model.AdminProduct" />
+        <AssociationConnector Association="Model.UserLike" />
+        <AssociationConnector Association="Model.UserOrder" />
+        <AssociationConnector Association="Model.UserTransaction" />
+        <AssociationConnector Association="Model.UserTransfer" />
+        <AssociationConnector Association="Model.AdminSlide" />
+        <AssociationConnector Association="Model.AdminUpload" />
+        <EntityTypeShape EntityType="Model.Post" Width="1.5" PointX="9.5" PointY="7.5" />
+        <AssociationConnector Association="Model.AdminPost" />
+        <EntityTypeShape EntityType="Model.Finilization" Width="1.5" PointX="9" PointY="15" />
+        <AssociationConnector Association="Model.AdminFinilization" />
+        <AssociationConnector Association="Model.ProductFinilization" />
+        <AssociationConnector Association="Model.UserFinilization" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

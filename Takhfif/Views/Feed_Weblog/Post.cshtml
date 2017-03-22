@@ -1,0 +1,23 @@
+﻿@model Takhfif.Models.Post
+
+@{
+    ViewBag.Title = Model.Title;
+}
+
+<item>
+    <Headline>
+        @Html.DisplayFor(model => model.Title)
+    </Headline>
+    <Abstract>
+        @Html.DisplayFor(model => model.Abstract)
+    </Abstract>
+    <Content>
+        @Html.Raw(Model.Body)
+    </Content>
+    <Date>
+        @Html.Raw(Html.DisplayFor(model => model.Date))
+    </Date>   
+    <Username>
+        @Html.Raw(Html.DisplayFor(model => model.AdminUsername))
+    </Username>
+</item>

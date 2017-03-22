@@ -1,0 +1,68 @@
+﻿@{
+    bool UserPage;
+    string Username = null;
+    try
+    {
+        Username = ViewContext.RouteData.Values["Username"].ToString();
+        UserPage = true;
+    }
+    catch
+    {
+        UserPage = false;
+    }
+   
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+@section Scripts{
+    $(document).ready(function(){ 
+    if (URL[1] != null){               
+        $.get(Root + "/Feed_Weblog/Admins_Profile/" + URL[1],{},function(xml){
+	        $('item',xml).each(function(i) {
+		        var About = $(this).find("About").text();
+		        var Connect = $(this).find("Connect").html();
+
+                $(".About").append(About);
+                $(".Html").append(Connect);
+	        });
+        });
+    }
+    });
+    @RenderSection("scripts", required: false)
+}
+@section header{
+@if (UserPage)
+{ 
+    <h1 class="Username">@Username</h1>
+    <div class="Date">@Takhfif.App_Code.About.CurrentDate</div>
+    <a class="Home" href="~/">صفحه خانه @Takhfif.App_Code.About.Name</a>
+    <a class="Rss" href="~/Feed_Weblog/Top_Username/@Username">خوراک</a>
+    <a class="Home_Weblog" href="~/Weblog">صفحه خانه وبلاگ</a>
+    <a class="Home_Admin" href="~/Weblog/@Username">صفحه خانه من</a>
+    <a class="Abnt" href="@Takhfif.App_Code.Abnt.WebApp_Url@Username">من در آبنبات</a>
+}
+else
+{
+    <h1 class="Title">وبلاگ تیم @Takhfif.App_Code.About.Name</h1>
+}
+}
+@if (UserPage)
+{
+<img class="Image" src="@Takhfif.App_Code.Abnt.ImageThumbnail(Username)" />
+<div class="About"></div>
+<div class="Html"></div>
+<div class="Main">
+    @RenderBody()
+</div>
+}
+else
+{
+<div class="List">
+    @RenderBody()
+</div>
+}
+@section Footer{
+    تمامی حقوق برای @Takhfif.App_Code.About.Name محفوظ است.
+    <a href="~/">
+        <img class="Logo" src="~/Logo/Small.png" />
+    </a>
+}

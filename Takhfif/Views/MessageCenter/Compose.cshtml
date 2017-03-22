@@ -1,0 +1,38 @@
+﻿@model Takhfif.Models.InMail
+
+@{
+    ViewBag.Title = "ارسال پیام";
+}
+<div class="Message">
+    در وارد کردن نام کاربری مقصد خود دقت نمائید. پیام ارسال شده قابل بازگشت نیست!
+</div>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.ToUsername)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.ToUsername)
+        @Html.ValidationMessageFor(model => model.ToUsername)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Value)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Value)
+        @Html.ValidationMessageFor(model => model.Value)
+    </div>
+
+    <p>
+        <input type="submit" value="ارسال" />
+    </p>
+}
+@if (!Request.IsAjaxRequest())
+{
+<div>
+    @Html.ActionLink("بازگشت", "Index")
+</div>
+}

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Takhfif.Models.Comment>
+@{
+    string Username = null;
+    try
+    {
+        Username = Session["Username"].ToString();
+    }
+    catch { }
+}
+<div id="Prev">
+    @foreach (var item in Model)
+    {
+        <img src="@Takhfif.App_Code.Abnt.ImageThumbnail(item.UserUsername)" />
+        <span>@Html.DisplayFor(modelItem => item.Value)</span>
+    }
+</div>
+@if (Session["Username"] != null)
+{
+    <div id="Compose">
+        <form method="post">
+            @Html.Hidden("username", Username)
+            <img src="@Takhfif.App_Code.Abnt.ImageThumbnail(Username)" />
+            <textarea name="value"></textarea>
+            <input type="submit" value="ارسال دیدگاه" />
+        </form>
+    </div>
+}

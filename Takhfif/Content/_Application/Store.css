@@ -1,0 +1,352 @@
+﻿body{
+    background-color:red;
+    background-attachment:fixed;
+    background-size:5%;
+    background-image:url('background.png');
+}
+header, footer {
+    display: block;
+    margin: 0 auto 0 auto;
+    display: block;
+    height: 20em;
+    padding-top:1em;
+}
+header{
+    border-top:1em solid black;
+    background-color:rgb(255, 156, 0);
+}
+
+.Title {
+    margin: 0 auto 0 auto;
+    display: block;
+    font-size: inherit;
+    text-align: center;
+}
+
+.Content{
+    margin-top:2em;
+    background-color:rgb(255, 255, 255);
+}
+
+footer {
+    border-top:.1em solid #4cff00;
+    text-align: center;
+    margin-top: 5em;
+    color:rgb(255, 255, 255);
+    background-color:rgb(76, 255, 0);
+}
+
+header .Logo {
+    position: absolute;
+    right:4em;
+    padding:4em;
+    width:10em;
+    height:5em;
+    border:none;
+}
+
+header .Abnt {
+    width: 20em;
+    top: 1em;
+    position: absolute;
+    right: 25em;
+    max-height:15em;
+    overflow-x:auto;
+    border-bottom:.5em solid rgb(129, 79, 0);
+    color:rgb(255, 255, 255);
+    font-size:.9em;
+}
+    header .Abnt img {
+        width: 5em;
+        height: 5em;
+        margin: .5em;
+        padding: .5em;
+        height:5em;
+        border-radius:5em;
+    }
+
+    header .Abnt a {
+        text-align: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+        display: block;
+        background-color:rgb(255, 255, 255) !important;
+        background-image:none !important;
+        color:rgb(255, 156, 0);
+    }
+    header .Abnt a:hover, header .Abnt a:focus, header .Abnt a:active{
+        background-color:rgb(129, 79, 0) !important;
+        color:rgb(255, 255, 255) !important;
+    }
+
+header hr {
+    display: none;
+}
+
+header .Social_Follow {
+    position: absolute;
+    left:4em;
+    padding:1em;
+    padding-top:3em;
+    top:1em;
+    width: 20em;
+    height:14.5em;
+    max-height: 14.5em;
+    overflow:auto;
+    text-align: center;
+}
+    header .Social_Follow a:hover, header .Social_Follow a:active, header .Social_Follow a:focus, header .RssList a:hover, header .RssList a:active, header .RssList a:focus {
+        font-size: 1.1em;
+        transform: rotate(342deg) scale(1) skew(1deg) translate(0px);
+        -webkit-transform: rotate(342deg) scale(1) skew(1deg) translate(0px);
+        -moz-transform: rotate(342deg) scale(1) skew(1deg) translate(0px);
+        -o-transform: rotate(342deg) scale(1) skew(1deg) translate(0px);
+        -ms-transform: rotate(342deg) scale(1) skew(1deg) translate(0px);
+    }
+
+header .Social_Follow a{
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:100% 100%;
+    display:inline-block;
+    height:4em;
+    width:4em;
+}
+a#googlePlus{
+    background-image:url('_SocialNetwork/GooglePlus.png');
+}
+a#twitter{
+    background-image:url('_SocialNetwork/Twitter.png');
+}
+a#linkedIn{
+    background-image:url('_SocialNetwork/LinkedIn.png');
+}
+a#instagram{
+    background-image:url('_SocialNetwork/Instagram.png');
+}
+a#facebook{
+    background-image:url('_SocialNetwork/Facebook.png');
+}
+a#youTube{
+    background-image:url('_SocialNetwork/YouTube.png');
+}
+
+footer a, footer a:hover {
+    background-color:rgb(255, 255, 255);
+    color:#4cff00;
+    height: 4em;
+}
+
+.Search {
+    width: 30em;
+    position: absolute;
+    right: 10em;
+    top: 15em;
+}
+.Search form{
+    display:block;
+}
+    .Search input {
+        font-size: 1em;
+    }
+
+    .Search #Search_Go {
+        width: 5em;
+        position:absolute;
+        left:1em;
+        color:rgb(129, 79, 0);
+    }
+
+    .Search #Search_Value {
+        color:rgb(129, 79, 0);
+        width: 20em;
+        margin-right: 1em;
+        background-image: url('button_bg.png'), url('button_bg.png'), -moz-radial-gradient(center bottom, circle, rgba(241,192,52,1) 0,rgba(241,192,52,0) 10em),-moz-linear-gradient(#f9a746, #e18f2b);
+        background-image: url('button_bg.png'), url('button_bg.png'), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(241,192,52,1)), to(rgba(241,192,52,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9a746), to(#e18f2b));
+    }
+
+header .RssList {
+    top:1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    width: 5em;
+    position: absolute;
+    right: 48em;
+    height: 16.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+    header .RssList a {
+        background-image: url('_SocialNetwork/RSS.png');
+        background-position-x: center;
+        background-position-y: center;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        text-decoration: none;
+        display: block;
+        height: 5em;
+        text-align: center;
+        margin-top: .2em;
+    }
+
+.Group, .City {
+    background-color:rgb(10, 0, 255);
+    background-attachment:fixed;
+    background-image:url('bubbles.png');
+    border:.1em solid #0a00ff;
+    border-radius:.5em;
+    width: 10em;
+    padding: .5em;
+    position: absolute;
+    height: 18em;
+    left: 0;
+    overflow: hidden;
+    margin: 1em;
+    margin-top: 2em;
+}
+
+.City {
+    margin-top: 23em;
+}
+
+    .Group:hover, .City:hover {
+        overflow: auto;
+    }
+
+    .Group a, .City a {
+        border-color:none;
+        border-style:solid;
+        border-width:.1em;
+        border-radius:.5em;
+        background-color:white;
+        margin-top: 1em;
+        font-size: 1em;
+        text-align: center;
+        padding-top: .5em;
+        padding-bottom: .5em;
+        display: block;
+        text-decoration: none;
+    }
+
+        .Group a:hover, .Group a:active, .Group a:focus, .City a:hover, .City a:focus, .City a:active {
+            background:#4973fa;
+            color:rgb(255, 255, 255);
+        }
+
+.Products {
+    display: block;
+    padding: 1em;
+    margin-top: 22em;
+    width: 70em;
+}
+
+footer .Links {
+    margin-top: 1em;
+}
+
+    footer .Links a {
+        padding: .5em;
+        margin: .5em;
+    }
+
+        footer .Links a:hover {
+            font-size: larger;
+            z-index: 10;
+        }
+
+.Admin, .Police {
+    background-color:rgb(10, 0, 255);
+    background-image:url('bubbles.png');
+    background-attachment:fixed;
+    border-radius:.5em;
+    color:rgba(255, 255, 255, 0.50);
+    position: absolute;
+    width: 25em;
+    max-width: 30em;
+    right: 0em;
+    top: 25em;
+    text-wrap: normal;
+    height:5em;
+    max-height:5em;
+    overflow: auto;
+    padding: 1em;
+    padding-right:1em;
+    border-right:.5em inset #00259f;
+}
+.Police {
+    margin-top: 10em;
+}
+    .Admin:hover, .Admin:focus, .Admin:active, .Police:hover, .Police:focus, .Police:active {
+        color: rgba(255, 255, 255, .95);
+    }
+
+    .Admin a, .Admin a:hover, .Admin a:focus, .Admin a:active, .Police a, .Police a:hover, .Police a:focus, .Police a:active {
+        color:rgb(255, 255, 255);
+        text-shadow:0 0 .01em rgb(255, 255, 255);
+    }
+
+#sliderFrame{
+}
+
+.Products{
+    display:block;
+    width:70em;
+    margin-right:1em;
+    margin-top:5em;
+    padding:0;
+}
+
+.Last, .Priority, .Products div.Buy, .Products div.Like {
+    margin-bottom: 1em;
+    padding: 2em;
+    padding-left:3em;
+    display: block;
+    margin-top: 0;
+    border-radius:.25em;
+    border-left:.5em solid #0a00ff;
+    background-position:left center;
+    background-repeat:no-repeat;
+    background-size: auto 5em;
+    background-attachment:scroll;
+    min-height:10em;
+
+}
+.Last{
+    background-image:url('titleLast.png');
+}
+.Priority{
+    background-image:url('titlePriority.png');
+}
+.Products div.Buy{
+    background-image:url('titleBuy.png');
+}
+.Products div.Like{
+    background-image:url('titleLike.png');
+}
+
+
+
+
+
+.Product_Name, .Product_City, .Product_Group, .Product_Description, .Product_Buy, .Product_Like, .Product_Price_Original, .Product_Price_Off, .Product_Price_Off_Percent, .Product_Timer, .Product_Map {
+    display:block;
+    width:70em;
+    text-align:center;
+    font-size:1em;
+    padding-top:1em;
+    padding-bottom:1em;
+    padding-right:1em;
+    margin-right:1em;
+    margin-bottom:1em;
+}
+.Product_Description{
+    background-color:rgba(255, 255, 255, 0.9);
+    color:inherit;
+    text-align:inherit;
+}
+.Thumbnail{
+    display:block;
+    margin:0 25em 0 auto;
+    width:20em;
+}

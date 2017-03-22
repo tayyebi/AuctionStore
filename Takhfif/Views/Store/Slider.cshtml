@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Takhfif.Models.Image>
+
+<link href="~/Scripts/slider/js-image-slider.css" rel="stylesheet" type="text/css" />
+<script src="~/Scripts/slider/js-image-slider.js" type="text/javascript"></script>
+<div id="sliderFrame">
+    <div id="slider">
+        @foreach (var item in Model)
+        {
+            <img src="@item.Source" alt="@item.Description" />
+        }
+    </div>
+    <div id="thumbs">
+        @foreach (var item in Model)
+        {
+            <div id="thumb">
+                <div id="frame"><img src="@item.Source" /></div>
+                <div id="thumb-content"><p>@item.Title</p>@item.Description</div>
+                <div style="clear:both;"></div>
+            </div>
+        }
+    </div>
+    <div style="clear:both;height:0;"></div>
+</div>

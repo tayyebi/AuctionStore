@@ -1,0 +1,51 @@
+﻿@model Takhfif.Models.Slide
+
+@{
+    ViewBag.Title = "جزئیات";
+}
+
+<fieldset>
+    <legend>@Html.DisplayFor(model => model.Title)</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Source)
+    </div>
+    <div class="display-field">
+       <img src="@Html.DisplayFor(model => model.Source)" title="@Html.DisplayFor(model => model.Source)" />
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.NavigateUrl)
+    </div>
+    <div class="display-field">
+        <a href="@Html.DisplayFor(model => model.NavigateUrl)">@Html.DisplayFor(model => model.NavigateUrl)</a>
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+@if (!Request.IsAjaxRequest())
+{
+<p>
+    @Ajax.ActionLink("ویرایش", "Edit", new { id = Model.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+    @Html.ActionLink("بازگشت", "Index")
+</p>
+}

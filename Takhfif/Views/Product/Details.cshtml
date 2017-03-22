@@ -1,0 +1,97 @@
+﻿@model Takhfif.Models.Product
+
+@{
+    ViewBag.Title = "جزئیات";
+}
+
+<fieldset>
+    <legend>@Html.DisplayFor(model => model.Name)</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date_Create)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date_Create)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date_Expire)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date_Expire)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price_Original)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price_Original)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price_Off)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price_Off)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price_Off_Percent)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price_Off_Percent)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Count_Like)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Count_Like)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Count_Buy)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Count_Buy)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Priority)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Priority)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+
+    <div class="display-field">
+        @Html.Raw(Model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.City.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.City.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Group.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Group.Name)
+    </div>
+</fieldset>
+@if (!Request.IsAjaxRequest())
+{
+    <p>
+        @Ajax.ActionLink("ویرایش", "Edit", new { id = Model.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+        @Html.ActionLink("بازگشت", "Index")
+    </p>
+}

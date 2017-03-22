@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/_Shared/_Layout.cshtml";
+}
+@section Scripts{
+    @RenderSection("scripts", required: false)
+}
+@section header{
+    <<<a href="@Takhfif.App_Code.Abnt.WebApp_Url">آبنبات</a>>>
+    <br/>
+    این وب سایت کاملا مطابق با استاندارد های ABNT در جولای 2014 می باشد.
+}
+<div class="Command" title="ABNT Command Output">
+    @RenderBody()
+</div>

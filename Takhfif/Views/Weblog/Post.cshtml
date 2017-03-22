@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "وبلاگ تیم";
+}
+@section Scripts{
+$(document).ready(function(){ 
+    if (URL[3] != null){
+        $.get(Root + "/Feed_Weblog/Post/" + URL[3],{},function(xml){
+	        $('item',xml).each(function(i) {
+		        var Headline = $(this).find("Headline").text();
+		        var Abstract = $(this).find("Abstract").text();
+		        var Body = $(this).find("Content").html();
+		        var Date = $(this).find("Date").text();
+		        var Username = $(this).find("Username").text();
+                
+                $('.Main').html('<h2 class="Headline"></h2><div class="Abstract"></div><div class="Body"></div><span class="Date"></span><span class="Username"></span>');
+                
+                $(".Headline, title").append(Headline);
+                $(".Abstract").append(Abstract);
+                $(".Body").html(Body);
+                $(".Date").text(Date);
+                $(".Username").text(Username);
+            });
+        });
+    }
+});
+}

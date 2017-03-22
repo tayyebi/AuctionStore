@@ -1,0 +1,41 @@
+﻿@model Takhfif.Models.Upload
+
+@{
+    ViewBag.Title = "حذف";
+}
+<fieldset>
+    <legend>@Html.DisplayNameFor(model => model.Name)</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Lenght)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Lenght)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="حذف" />
+@if (!Request.IsAjaxRequest())
+{
+		<div>
+			@Html.ActionLink("بازگشت", "Index")
+		</div>
+}
+    </p>
+}

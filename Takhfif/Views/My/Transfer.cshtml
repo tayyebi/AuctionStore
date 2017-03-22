@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Takhfif.Models.Transfer>
+
+@{
+    ViewBag.Title = "سوابق واریز کارت به کارت";
+}
+<p>
+    <a data-ajax="true" data-ajax-complete="JsDynamic()" data-ajax-mode="replace" data-ajax-update="#Dynamic" href="~/My/Offline">شارژ آفلاین حساب</a>
+    <a data-ajax="true" data-ajax-complete="JsDynamic()" data-ajax-mode="replace" data-ajax-update="#Dynamic" href="~/My/Online">شارژ آنلاین حساب</a>
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Refer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsConfirmed)
+        </th>
+        <th>
+            تاریخ
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.Value)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Refer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.IsConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Date_Year)-@Html.DisplayFor(modelitem => item.Date_Month)-@Html.DisplayFor(modelitem => item.Date_Day)
+            </td>
+        </tr>
+    }
+
+</table>

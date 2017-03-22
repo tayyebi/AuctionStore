@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Takhfif.Models.Transaction>
+
+@{
+    ViewBag.Title = "بانک من در " + Takhfif.App_Code.About.Name;
+}
+<p>
+    <a data-ajax="true" data-ajax-complete="JsDynamic()" data-ajax-mode="replace" data-ajax-update="#Dynamic" href="~/My/Offline">شارژ آفلاین حساب</a>
+    <a data-ajax="true" data-ajax-complete="JsDynamic()" data-ajax-mode="replace" data-ajax-update="#Dynamic" href="~/My/Online">شارژ آنلاین حساب</a>
+</p>
+<h2>
+    موجودی حساب شما: @ViewBag.Credit
+</h2>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Report)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelitem => item.Report)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Date)
+            </td>
+        </tr>
+    }
+
+</table>

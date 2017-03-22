@@ -1,0 +1,114 @@
+﻿@model Takhfif.Models.Product
+
+@{
+    ViewBag.Title = "ویرایش";
+}
+
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@Html.DisplayFor(model => model.Name)</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date_Expire)
+        </div>
+        <div class="editor-field">
+            چند روز آینده؟ <input name="expire_day" type="number" />
+            و چند ساعت؟ <input name="expire_hour" type="number" />
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price_Original)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price_Original)
+            @Html.ValidationMessageFor(model => model.Price_Original)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price_Off_Percent)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price_Off_Percent)
+            @Html.ValidationMessageFor(model => model.Price_Off_Percent)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Thumbnail)
+        </div>
+        <div class="editor-field">
+            <input type="file" name="FileUploader" />
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Priority)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Priority)
+            @Html.ValidationMessageFor(model => model.Priority)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Map)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Map)
+            @Html.ValidationMessageFor(model => model.Map)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CityId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.CityId, ViewData["CityId"] as IEnumerable<SelectListItem>)
+            @Html.ValidationMessageFor(model => model.GroupId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GroupId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.GroupId, ViewData["GroupId"] as IEnumerable<SelectListItem>)
+            @Html.ValidationMessageFor(model => model.GroupId)
+        </div>
+
+        <p>
+            <input type="submit" value="ذخیره" />
+        </p>
+    </fieldset>
+    }
+    @if (!Request.IsAjaxRequest())
+    {
+        <p>
+            @Html.ActionLink("بازگشت", "Index")
+        </p>
+    }
+</form>

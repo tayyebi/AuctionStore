@@ -1,0 +1,34 @@
+﻿@{
+    string ExternalUrl = Takhfif.App_Code.Abnt.WebApp_Url + Session["Username"] + "/fa-IR/Developer/ImageThumbnail";
+}
+
+@if (Session["Username"] == null)
+{
+    <table>
+        <tr>
+            <td width="100%">
+                <a href="~/Abnt">ورود به سیستم</a>
+            </td>
+        </tr>
+        <tr>
+            <td width="100%">به ما در آبنبات اعتماد کنید:<h3>@Takhfif.App_Code.Abnt.WebApp_Name</h3></td>
+        </tr>
+    </table>
+}
+@if (Session["Username"] != null && Session["Username"].ToString() != "")
+{
+    <table>
+        <tr>
+            <td width="50%">
+                <a href="~/Abnt">آبنبات</a>
+            </td>
+            <td>
+                <a href="~/My/Profile">پروفایل من</a>
+            </td>
+        </tr>
+        <tr>
+            <td width="50%">@Session["Fullname"]</td>
+            <td width="50%"><img src="@ExternalUrl" /></td>
+        </tr>
+    </table>
+}

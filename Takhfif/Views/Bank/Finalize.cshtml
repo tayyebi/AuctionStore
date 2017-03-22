@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = ViewBag.Order;
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@ViewBag.Order</legend>
+        @Html.Hidden("OrderId", HttpContext.Current.Request.RequestContext.RouteData.Values["Id"].ToString())
+        <select name="Status">
+            <option>
+                1- در انتظار تائید کاربر
+            </option>
+            <option>
+                2- در انتظار تائید ادمین
+            </option>
+            <option>
+                3-1 تائید شده توسط ادمین
+            </option>
+            <option>
+                3-2 رد شده توسط ادمین
+            </option>
+            <option>
+                4- ارسال برای خرید
+            </option>
+        </select>
+        <input type="submit" value="تغییر وضعیت" />
+    </fieldset>
+}

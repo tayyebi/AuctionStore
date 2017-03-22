@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Takhfif.Models.Product>
+@{
+    ViewBag.Title = "نمایش لیست محصولات بر اساس گروه";
+}
+@foreach (var item in Model) {
+<item>
+    <Name>
+        @Html.DisplayFor(modelItem => item.Name)
+    </Name>
+    <Id>
+        @Html.DisplayFor(modelItem => item.Id)
+    </Id>
+</item>
+}

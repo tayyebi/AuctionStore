@@ -1,0 +1,29 @@
+﻿@model Takhfif.Models.Group
+
+@{
+    ViewBag.Title = "حذف";
+}
+
+<h3 class="Message">حذف این گروه باعث حذف تمامی محصولات آن میگردد. در انجام این عمل دقت کنید!</h3>
+<fieldset>
+    <legend>@Html.DisplayNameFor(model => model.Name)</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+@using (Html.BeginForm()) {
+@Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="حذف" />
+    </p>
+}
+</fieldset>
+@if (!Request.IsAjaxRequest())
+{
+    @Html.ActionLink("بازگشت", "Index")
+}
+

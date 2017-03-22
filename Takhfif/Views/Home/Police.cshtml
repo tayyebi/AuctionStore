@@ -1,0 +1,21 @@
+﻿<div class="Police_LastPost">
+    <span class="Police_LastPost_Username"></span>
+    <span class="Police_LastPost_Date"></span>
+    <div class="Police_LastPost_Content"></div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.get(Root + "/Feed_Weblog/LastPost_Police", {}, function (xml) {
+            $('item', xml).each(function (i) {
+                var Username = $(this).find("Username").text();
+                var Content = $(this).find("Content").text();
+                var Date = $(this).find("Date").text();
+                var Link = $(this).find("URL").text();
+
+                $(".Police_LastPost_Username").append(Username);
+                $(".Police_LastPost_Date").append(Date);
+                $(".Police_LastPost_Content").append('<a href="' + Link + '">' + Content + '</a>');
+            });
+        });
+    });
+</script>

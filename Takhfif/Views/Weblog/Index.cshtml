@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "وبلاگ تیم";
+}
+@section Scripts{
+$(document).ready(function(){ 
+    if (URL[1] == null){
+	    $.get(Root + "/Feed_Weblog/Admins",{},function(xml){
+        var output = '';
+	    $('item',xml).each(function(i) {
+		    var Username = $(this).find("Username").text();
+		    var ImageUrl = $(this).find("ImageUrl").text();
+		    var Url = $(this).find("Url").text();
+		    var Type = $(this).find("Type").text();
+		    var Description_Text = $(this).find("About").text();
+
+            output += '<div class="Admin">';
+            output += '<a class="Username" href="' + Url + '">' + Username + '</a>';
+            output += '<img class="Image" src="' + ImageUrl + '" />';
+            output += '<span class="Type">' + Type + '</span>';
+            output += '<div class="Description">' + Description_Text + '</div>';
+	        output += '</div>';
+	    });
+		$(".List").append(output);
+    });
+    }
+    else{
+        if (URL[2] == null){
+                $.get(Root + '/Feed_Weblog/Top_Username/' + URL[1],{},function(xml){
+                    var output = '';
+	                $('item',xml).each(function(i) {
+		                var Headline = $(this).find("Headline").text();
+		                var Url = $(this).find("Url").text();
+		                var Abstract = $(this).find("Abstract").text();
+		                var Date = $(this).find("Date").text();
+
+                        output += '<div class="Post">';
+                        output += '<a class="Headline" href="' + Url + '">' + Headline + '</a>';
+                        output += '<span class="Date">' + Date + '</span>';
+                        output += '<div class="Abstract">' + Abstract + '</div>';
+	                    output += '</div>';
+                });
+                $(".Main").append(output);
+            });
+        }
+        else{
+        }
+    }
+});
+}

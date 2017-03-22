@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Takhfif.Models.Order>
+@{
+    ViewBag.Title = "سبد خرید";
+}
+<table>
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="~/Store/Product/@item.Product.Id">
+                    <img src="@Takhfif.App_Code.About.Root.ToString()Card/Thumbnail/@item.Product.Id" />
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelitem => item.Status)
+            </td>
+            <td>
+                @if (item.Status.StartsWith("1"))
+                {
+                @Ajax.ActionLink("تائید", "Finalization", new { id = item.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+                @Ajax.ActionLink("حذف", "Delete", new { id = item.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+                }
+                else if (item.Status.StartsWith("3-2"))
+                {
+                @Ajax.ActionLink("حذف", "Delete", new { id = item.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+                }
+            </td>
+        </tr>
+    }
+</table>

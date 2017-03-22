@@ -1,0 +1,77 @@
+﻿@model Takhfif.Models.Transfer
+
+@{
+    ViewBag.Title = "شارژ آفلاین حساب";
+}
+<div class="Message">
+    <a href="~/My/Transfer">مشاهده سوابق واریز کارت به کارت</a>
+    <br />
+    برای واریز کارت به کارت میتوانید از اطلاعات قرار گرفته شده در آدرس زیر استفاده نمائید.
+    <br />
+    <a href="~/Info/OfflineBank" target="_blank">@Takhfif.App_Code.About.Root.ToString()ConsoleKeyInfo/OfflineBank</a>
+</div>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>اطلاعات واریز کارت به کارت</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Value)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Value)
+            @Html.ValidationMessageFor(model => model.Value)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Refer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Refer)
+            @Html.ValidationMessageFor(model => model.Refer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BranchCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.BranchCode)
+            @Html.ValidationMessageFor(model => model.BranchCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date_Year)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_Year)
+            @Html.ValidationMessageFor(model => model.Date_Year)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date_Month)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_Month)
+            @Html.ValidationMessageFor(model => model.Date_Month)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date_Day)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_Day)
+            @Html.ValidationMessageFor(model => model.Date_Day)
+        </div>
+
+        <p>
+            <input type="submit" value="ایجاد" />
+            @if (!Request.IsAjaxRequest())
+            {
+            <a href="~/My/Bank">بازگشت</a>
+            }
+        </p>
+    </fieldset>
+}

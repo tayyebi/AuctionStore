@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = Takhfif.App_Code.About.Name + " | " + "خانه";
+}
+<div class="Admin">
+    @Html.Action("Admin", "Home")
+</div>
+<div class="Police">
+    @Html.Action("Police", "Home")
+</div>
+@Html.Action("Slider","Home")
+<div class="Products">
+    <div class="Last"></div>
+    <div class="Priority"></div>
+    <div class="Buy"></div>
+    <div class="Like"></div>
+</div>
+@section Scripts{
+    $(document).ready(function(){
+        $.get(Root + "/Feed_Products/Product_Last/11",{},function(xml){
+            var output = '';
+            $('item',xml).each(function(i) {
+                var Name = $(this).find("Name").text();
+                var Id = $(this).find("Id").text();
+                var CardId = $(this).find("CardId").text();
+                var url = "Card/View/" + Id;
+                $.get(url, function (data) {
+                    $(".Last").append('<div class="Card">' + data + '</div>');
+                });
+            });
+        });
+        $.get(Root + "/Feed_Products/Product_Priority/3",{},function(xml){
+            var output = '';
+            $('item',xml).each(function(i) {
+                var Name = $(this).find("Name").text();
+                var Id = $(this).find("Id").text();
+                var CardId = $(this).find("CardId").text();
+                var url = "Card/View/" + Id;
+                $.get(url, function (data) {
+                    $(".Priority").append('<div class="Card">' + data + '</div>');
+                });
+            });
+        });
+        $.get(Root + "/Feed_Products/Product_Buy/3",{},function(xml){
+            var output = '';
+            $('item',xml).each(function(i) {
+                var Name = $(this).find("Name").text();
+                var Id = $(this).find("Id").text();
+                var CardId = $(this).find("CardId").text();
+                var url = "Card/View/" + Id;
+                $.get(url, function (data) {
+                    $(".Products>.Buy").append('<div class="Card">' + data + '</div>');
+                });
+            });
+        });
+        $.get(Root + "/Feed_Products/Product_Like/3",{},function(xml){
+            var output = '';
+            $('item',xml).each(function(i) {
+                var Name = $(this).find("Name").text();
+                var Id = $(this).find("Id").text();
+                var CardId = $(this).find("CardId").text();
+                var url = "Card/View/" + Id;
+                $.get(url, function (data) {
+                    $(".Products>.Like").append('<div class="Card">' + data + '</div>');
+                });
+            });
+        });
+    });
+}

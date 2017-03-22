@@ -1,0 +1,18 @@
+﻿<rss xmlns:media="@Takhfif.App_Code.About.Root" version="2.0" encoding="UTF-8">
+<channel>
+    <title>@ViewBag.Title</title>
+    <link>@Takhfif.App_Code.About.Root</link>
+    <description>تولید شده در همدان - ایران به سفارش تیم تخفیف طلایی</description>
+    <language>fa-IR</language>
+    <copyright>تمامی حقوق برای @Takhfif.App_Code.About.Name در سال 1393 محفوظ است.</copyright>
+    <pubDate>@Takhfif.App_Code.About.CurrentDate</pubDate>
+    <image>
+        <title>@Takhfif.App_Code.About.Name</title>
+        <link>@Takhfif.App_Code.About.Root</link>
+        <url>@Takhfif.App_Code.About.Root.Remove(Takhfif.App_Code.About.Root.Length - 1)/Logo/Larg.png</url>
+    </image>
+
+@RenderBody()
+
+</channel>
+</rss>

@@ -1,0 +1,34 @@
+﻿@model Takhfif.Models.Upload
+
+@{
+    ViewBag.Title = "آپلود";
+}
+
+<form method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>آپلود</legend>
+        <div class="editor-field">
+            <input type="file" name="FileUploader" />
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <p>
+            <input type="submit" value="آپلود" />
+        </p>
+    </fieldset>
+</form>
+@if (!Request.IsAjaxRequest())
+{
+<div>
+    @Html.ActionLink("بازگشت", "Index")
+</div>
+}

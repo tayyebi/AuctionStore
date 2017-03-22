@@ -1,0 +1,49 @@
+﻿@model Takhfif.Models.Admin
+
+@{
+    ViewBag.Title = "حذف";
+}
+
+<h3 class="Message">با حذف این کارمند تنها مجوز ورد وی باطل میگردد. لطفا برای حذف تمامی فعالیت های این ادمین، با مدیر فنی تماس بگیرید.</h3>
+<fieldset>
+    <legend>کارمند</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.About)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.About)
+    </div>
+
+    @using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    if (Model.Username.ToLower() != Session["Username"].ToString().ToLower())
+    {
+    <p>
+        <input type="submit" value="حذف" />
+    </p>
+    }
+    else
+    {
+    <h3 class="Message">شما نمی توانید خود را حذف کنید. لطفا برای دسترسی به امکانانت ویژه با مدیر فنی تماس بگیرید.</h3>
+    }
+    }
+</fieldset>
+@if (!Request.IsAjaxRequest())
+{
+    @Html.ActionLink("بازگشت", "Index")
+}

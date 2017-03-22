@@ -1,0 +1,61 @@
+﻿body {
+    background-image:none;
+    color:#fff200;
+    background-color:#1f1e00;
+    margin:0;
+}
+header{
+    text-align:right;
+    background-image:url('../../../../Logo/Abnt.png');
+    background-size:auto 100%;
+    background-position:center left;
+    background-repeat:no-repeat;
+    font-size:2em;
+    height:5em;
+    vertical-align:central;
+}
+body #Title{
+    text-align:center;
+    font-size:smaller;
+    display:none;
+}
+.Command[title]{
+    direction:ltr;
+    text-align:left;
+}
+.Command {
+    display: block;
+    margin: 0 auto 0 auto;
+    direction: rtl;
+    color:black;
+    font-size:1em;
+}
+    .Command a, .Command a:hover {
+        transform: none;
+        -webkit-transform: none;
+        background: none;
+        color: inherit;
+        font-size: inherit;
+        padding: 0;
+        margin: 0;
+        text-decoration: underline;
+        border:none;
+    }
+        .Command a:hover {
+            text-decoration: none;
+            background-color: black;
+            color: #fff200;
+        }
+    .Command .ui-dialog {
+        min-width:100em;
+    }
+
+.ui-dialog-title
+{
+    color:black;
+    font-size:smaller;
+    direction:ltr;
+}
+.ui-icon-closethick, .ui-dialog-titlebar-close {
+    display: none;
+}

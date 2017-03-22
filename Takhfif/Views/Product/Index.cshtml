@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Takhfif.Models.Product>
+
+@{
+    ViewBag.Title = "محصول";
+}
+
+<p>
+    @Html.ActionLink("ایجاد", "Create")
+    @Html.ActionLink("شهر", "Index", "Product_City")
+    @Html.ActionLink("گروه", "Index", "Product_Group")
+    @Html.ActionLink("تصاویر", "Index", "Product_Image")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Expire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price_Off_Percent)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Expire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price_Off_Percent) %
+            </td>
+            <td>
+                @Html.ActionLink("ویرایش", "Edit", new { id = item.Id })
+                @Ajax.ActionLink("جزئیات", "Details", new { id = item.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+                @Ajax.ActionLink("حذف", "Delete", new { id = item.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Takhfif.Models.Order>
+
+@{
+    ViewBag.Title = "سفارش های در انتظار تائید ادمین";
+}
+<p>
+    @Html.ActionLink("آرشیو سفارش ها", "Finalization_Archive", "Bank")
+    @Html.ActionLink("سفارش های نهایی شده", "Finalization_Print", "Bank")
+</p>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserUsername)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Bank)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Buy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date_Expire)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserUsername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Bank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Buy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date_Expire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Ajax.ActionLink("نهایی سازی", "Finalize", new { id = item.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,30 @@
+﻿@model Takhfif.Models.Post
+
+@{
+    ViewBag.Title = "جزئیات";
+}
+
+<fieldset>
+    <legend>@Html.DisplayFor(model => model.Title)</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Abstract)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Abstract)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.Raw(Html.DisplayFor(model => model.Date))
+    </div>
+</fieldset>
+@if (!Request.IsAjaxRequest())
+{
+<p>
+    @Ajax.ActionLink("ویرایش", "Edit", new { id = Model.Id }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Dynamic", OnComplete = "JsDynamic()" })
+    @Html.ActionLink("بازگشت", "Index")
+</p>
+}

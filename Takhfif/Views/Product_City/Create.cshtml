@@ -1,0 +1,33 @@
+﻿@model Takhfif.Models.City
+
+@{
+    ViewBag.Title = "ایجاد";
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>شهر محصولات</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <p>
+            <input type="submit" value="ایجاد" />
+        </p>
+    </fieldset>
+}
+@if (!Request.IsAjaxRequest())
+{
+<div>
+    @Html.ActionLink("بازگشت", "Index")
+</div>
+}
+
